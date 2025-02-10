@@ -1,14 +1,14 @@
 "use client";
 
-import React, { useEffect, useRef, useState } from "react";
+import React, { useEffect, useRef, useState, Suspense, lazy } from "react";
 import { Button } from "../ui/button";
 import TailoredLottie from "../../../../public/images/home/steps/tailored_lottie.json";
 import BookLottie from "../../../../public/images/home/steps/book_lottie.json";
 import ConverseLottie from "../../../../public/images/home/steps/converse_lotttie.json";
 import DiscoverVendors from "../../../../public/images/home/steps/discover_vendors_lottie.json";
-import Lottie from "lottie-react";
 import { motion } from "framer-motion";
-import { AnyAaaaRecord } from "dns";
+
+const Lottie = lazy(() => import("lottie-react"));
 
 export default function Steps() {
   type VendorFeature = {
@@ -127,10 +127,12 @@ export default function Steps() {
             ))}
           </div>
           <div className="md:w-1/2">
-            <Lottie
-              animationData={selectedVendorFeature.lottiePath}
-              loop={false}
-            />
+            <Suspense fallback={<div>Loading...</div>}>
+              <Lottie
+                animationData={selectedVendorFeature.lottiePath}
+                loop={false}
+              />
+            </Suspense>
           </div>
         </div>
       </div>

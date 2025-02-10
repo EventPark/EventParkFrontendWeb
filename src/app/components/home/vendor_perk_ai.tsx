@@ -1,25 +1,24 @@
 "use client";
 import Image from "next/image";
 import { Button } from "../ui/button";
-import Lottie from "lottie-react";
+import { useEffect, useState } from "react";
 import aiLottieAnimation from "../../../../public/images/home/ai_lottie.json";
 
 export default function AISection() {
+  const [Lottie, setLottie] = useState<any>(null);
+
+  useEffect(() => {
+    import("lottie-react").then((LottieModule) => {
+      setLottie(() => LottieModule.default);
+    });
+  }, []);
+
   return (
     <div className="md:flex-row flex-col px-5 md:px-40 gap-8 flex h-full">
       <div className="order-2 md:order-1 w-full md:w-[40%] max-w-3xl">
         <div className="hidden md:flex">
-          <Lottie animationData={aiLottieAnimation} loop={true} />
+          {Lottie && <Lottie animationData={aiLottieAnimation} loop={true} />}
         </div>
-        {/* <Image
-          src="/images/home/vendorperk_ai.svg"
-          alt="Description"
-          width={353}
-          height={403}
-          layout="responsive"
-          className=" md:flex hidden"
-          objectFit="cover"
-        /> */}
       </div>
       <div className="w-full md:w-[60%] order-1 md:order-2">
         <div className="px-5 md:px-12 py-10 md:py-20 rounded-2xl h-full flex flex-col bg-[#FCFAF6] bg-cover bg-no-repeat">
