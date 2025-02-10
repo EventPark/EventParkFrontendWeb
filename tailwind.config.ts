@@ -1,20 +1,29 @@
-import type { Config } from 'tailwindcss'
+import type { Config } from "tailwindcss";
+const { fontFamily } = require("tailwindcss/defaultTheme");
 
 const config: Config = {
   content: [
-    './src/pages/**/*.{js,ts,jsx,tsx,mdx}',
-    './src/components/**/*.{js,ts,jsx,tsx,mdx}',
-    './src/app/**/*.{js,ts,jsx,tsx,mdx}',
+    "./src/pages/**/*.{js,ts,jsx,tsx,mdx}",
+    "./src/components/**/*.{js,ts,jsx,tsx,mdx}",
+    "./src/app/**/*.{js,ts,jsx,tsx,mdx}",
   ],
   theme: {
     extend: {
-      backgroundImage: {
-        'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
-        'gradient-conic':
-          'conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))',
+      colors: {
+        primary: {
+          DEFAULT: "#610037",
+          light: "#B0809B",
+          lighter: "#C099AF",
+        },
+      },
+      letterSpacing: {
+        standard: "-1.26px",
+      },
+      fontFamily: {
+        satoshi: ["Rethink Sans", ...fontFamily.sans],
       },
     },
   },
   plugins: [],
-}
-export default config
+};
+export default config;
