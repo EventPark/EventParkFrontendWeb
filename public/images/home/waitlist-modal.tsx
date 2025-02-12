@@ -18,9 +18,7 @@ export default function WaitlistModal({ isOpen, onClose }: WaitlistModalProps) {
 
   return (
     <div
-      className={`${
-        isOpen ? "flex z-10" : "hidden"
-      } fixed inset-0 items-center justify-center bg-black bg-opacity-50 px-5`}
+      className={`flex top-0 z-10 fixed inset-0 items-center justify-center bg-black bg-opacity-50 px-5`}
     >
       <div className="flex md:px-0 bg-white rounded-2xl overflow-hidden">
         <Image

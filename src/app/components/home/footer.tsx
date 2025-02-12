@@ -1,4 +1,5 @@
 import { Button } from "../ui/button";
+import CopyRight from "../ui/copy-right";
 import Logo from "../ui/logo";
 
 export default function Footer() {
@@ -69,11 +70,7 @@ export default function Footer() {
           </div>
         </div>
       </footer>
-      <div className="bg-[#0f0f0f] text-white text-center py-8">
-        <p className="text-sm text-[#999]">
-          Copyright © 2025 • All rights reserved
-        </p>
-      </div>
+      <CopyRight />
     </>
   );
 }

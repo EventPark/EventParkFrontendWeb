@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import "./globals.css";
 import NavBar from "./components/ui/navbar";
+import WaitlistNavbar from "./components/waitlist/navbar";
 
 export const metadata: Metadata = {
   title: "VendorPerk",
@@ -16,9 +17,14 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body>
-        <header>
-          <NavBar />
-        </header>
+        <meta
+          name="viewport"
+          content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no"
+        />
+
+        {/* <header>
+        </header> */}
+
         {children}
       </body>
     </html>
