@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import "./globals.css";
 import NavBar from "./components/ui/navbar";
 import WaitlistNavbar from "./components/waitlist/navbar";
+import { UserTypeProvider } from "./context/UserTypeContext";
 
 export const metadata: Metadata = {
   title: "VendorPerk",
@@ -22,10 +23,7 @@ export default function RootLayout({
           content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no"
         />
 
-        {/* <header>
-        </header> */}
-
-        {children}
+        <UserTypeProvider>{children}</UserTypeProvider>
       </body>
     </html>
   );

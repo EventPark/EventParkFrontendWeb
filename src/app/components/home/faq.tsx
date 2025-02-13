@@ -41,18 +41,20 @@ const FAQAccordion = () => {
   };
 
   return (
-    <div className="md:max-w-[720px] mx-auto px-5 md:px-0 py-16 flex flex-col items-center ">
+    <div className="md:max-w-[720px] mx-auto px-5 md:px-0 py-16 flex flex-col items-center">
       <h6 className="text-[#B3B3B3] font-normal text-sm tracking-[1.68px]">
         FAQS
       </h6>
-      <h2 className="text-[28px] md:text-[48px] font-normal text-center mb-6 w-[329px] md:w-[662px] tracking-[-1.26px] md:tracking-[-2.4px]">
+      <h2 className="text-[28px] md:text-[48px] font-normal text-center mb-6 w-full md:w-[662px] tracking-[-1.26px] md:tracking-[-2.4px]">
         We answered your questions so you don&apos;t have to ask again
       </h2>
       <div className="space-y-4 md:space-y-12 my-9 w-full">
         {faqs.map((faq, index) => (
           <div
             key={index}
-            className={`pb-2 ${index !== faqs.length - 1 ? "border-b" : ""}`}
+            className={`pb-2 ${
+              index !== faqs.length - 1 ? "border-b" : ""
+            } w-[100%]`}
           >
             <button
               onClick={() => toggleFAQ(index)}
@@ -89,9 +91,9 @@ const FAQAccordion = () => {
                 animate={{ opacity: 1, height: "auto" }}
                 exit={{ opacity: 0, height: 0 }}
                 transition={{ duration: 0 }}
-                className="text-[#31312F] text-sm md:text-[18px] mt-2 border rounded-lg border-[#EFE5EB] bg-[#FBF9FA] px-6 py-8 leading-normal w-full"
+                className="text-[#31312F] mx-auto text-sm md:text-[18px] mt-2 border rounded-lg border-[#EFE5EB] bg-[#FBF9FA] px-6 py-8 leading-normal  "
               >
-                {faq.answer}
+                <div className=" w-full md:w-[600px] ">{faq.answer}</div>
               </motion.div>
             )}
           </div>
