@@ -72,8 +72,8 @@ export default function WaitlistModal({ isOpen, onClose }: WaitlistModalProps) {
           className="hidden md:flex"
           src={
             userType === "user"
-              ? "/images/home/waitlist-modal.svg"
-              : "/images/home/waitlist-modal-vendor.svg"
+              ? "/images/home/waitlist-modal.png"
+              : "/images/home/waitlist-modal-vendor.png"
           }
           width={300}
           height={500}

@@ -53,8 +53,8 @@ const Hero = () => {
           <Image
             src={
               userType === "user"
-                ? "/images/waitlist/hero-image.svg"
-                : "/images/waitlist/vendor-hero-image.svg"
+                ? "/images/waitlist/hero-image.png"
+                : "/images/waitlist/vendor-hero-image.png"
             }
             alt=""
             width={1920}
@@ -66,8 +66,8 @@ const Hero = () => {
           <Image
             src={
               userType === "user"
-                ? "/images/waitlist/hero-image-mobile.svg"
-                : "/images/waitlist/vendor-hero-image-mobile.svg"
+                ? "/images/waitlist/hero-image-mobile.png"
+                : "/images/waitlist/vendor-hero-image-mobile.png"
             }
             alt=""
             width={1259}
