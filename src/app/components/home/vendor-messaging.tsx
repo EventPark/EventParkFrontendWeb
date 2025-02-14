@@ -12,7 +12,7 @@ export default function VendorMessagingSection() {
           height={403}
           layout="responsive"
           className="flex md:hidden"
-          objectFit="cover"
+          style={{ objectFit: "cover" }}
         />
         <Image
           src="/images/home/vendor_chat.svg"
@@ -21,7 +21,7 @@ export default function VendorMessagingSection() {
           height={403}
           layout="responsive"
           className=" md:flex hidden"
-          objectFit="cover"
+          style={{ objectFit: "cover" }}
         />
       </div>
       <div className="order-2 md:order-1 w-full md:w-[60%]">

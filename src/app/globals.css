@@ -37,4 +37,40 @@ body {
   outline: 1px solid tomato;
 }
 
+/* Custom Styling */
+.waitlist-select select {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  position: relative;
+  padding-right: 1.5em; /* Add padding to make space for the arrow */
+}
+
+.waitlist-select {
+  position: relative;
+  display: inline-block;
+  width: 100%;
+}
+
+.waitlist-select::after {
+  content: "";
+  position: absolute;
+  top: 40%;
+  right: 0.75em; /* Position the arrow inside the select */
+  width: 1.5em;
+  height: 1.5em;
+  background: url("../../public/icons/chevron-down.svg") no-repeat center center;
+  background-size: contain;
+  pointer-events: none; /* Prevent the arrow from blocking clicks */
+}
+
+.waitlist-select select {
+  width: 100%; /* Ensure the select takes the full width of the container */
+
+  background-color: #fff;
+  padding: 0.5em;
+  font-size: 1em;
+  line-height: 1.5;
+}
+
 /* Add more styles for other weights and italics */

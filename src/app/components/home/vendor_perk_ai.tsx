@@ -43,7 +43,7 @@ export default function AISection() {
             height={403}
             layout="responsive"
             className="flex md:hidden mt-6"
-            objectFit="cover"
+            style={{ objectFit: "cover" }}
           />
           <div className="md:flex justify-center md:justify-start hidden flex-1 h-full items-end md:items-start  pt-4 font-medium">
             <Button className="bg-[#F0E8D1] text-[#574F38] items-center gap-3 p-[14px] w-auto h-[56px]">

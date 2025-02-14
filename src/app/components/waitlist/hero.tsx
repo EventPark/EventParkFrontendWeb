@@ -3,9 +3,12 @@ import WaitlistNavbar from "./navbar";
 import { Button } from "../ui/button";
 import Image from "next/image";
 import { useUserType } from "@/app/context/UserTypeContext";
-
+import { useModal } from "@/app/context/ModalContext";
+import Modal from "@/app/components/ui/modal";
+import WaitlistModal from "../../../../public/images/home/waitlist-modal";
 const Hero = () => {
   const { userType } = useUserType();
+  const { openModal, isOpen, closeModal } = useModal();
 
   return (
     <div className="bg-[url('/images/waitlist/hero_bg.svg')] bg-cover bg-center bg-no-repeat mb-[93px]  w-full">
@@ -36,8 +39,15 @@ const Hero = () => {
           Join the waitlist for early access to seamless event planning with
           VendorPerk!
         </p>
-        <Button className="bg-primary text-white text-[18px] font-normal leading-[28px] tracking-[-0.54px] px-7 mb-16 mt-4">
-          Join Waitlist 🎉
+        <Button
+          onClick={openModal}
+          className={`${
+            userType === "user"
+              ? "bg-primary text-white"
+              : "bg-[#f0e8d1] text-[#3e361f]"
+          } text-[18px] font-medium leading-[28px] tracking-[-0.54px] px-7 mb-16 mt-4`}
+        >
+          {userType === "user" ? " Join Waitlist 🎉" : "🚀 Get Early Access"}
         </Button>
         <div className="flex-1  w-full">
           <Image
@@ -50,7 +60,7 @@ const Hero = () => {
             width={1920}
             height={460}
             className="hidden md:flex"
-            objectFit="cover"
+            style={{ objectFit: "cover" }}
           />
 
           <Image
@@ -66,6 +76,9 @@ const Hero = () => {
           />
         </div>
       </div>
+      <Modal>
+        <WaitlistModal isOpen={isOpen} onClose={closeModal} />
+      </Modal>
     </div>
   );
 };

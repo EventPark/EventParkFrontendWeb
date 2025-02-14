@@ -16,7 +16,7 @@ export default function BudgetSection() {
             height={403}
             layout="responsive"
             className="md:flex hidden"
-            objectFit="cover"
+            style={{ objectFit: "cover" }}
           />
         </div>
         <div className="order-2 md:order-1 w-full md:w-[60%]">
@@ -40,7 +40,7 @@ export default function BudgetSection() {
                 width={353}
                 height={290}
                 layout="responsive"
-                objectFit="cover"
+                style={{ objectFit: "cover" }}
                 className="flex md:hidden"
               />
               <div className="flex justify-start flex-1 h-full items-end md:items-start pt-4">

@@ -3,6 +3,7 @@ import "./globals.css";
 import NavBar from "./components/ui/navbar";
 import WaitlistNavbar from "./components/waitlist/navbar";
 import { UserTypeProvider } from "./context/UserTypeContext";
+import { ModalProvider } from "./context/ModalContext";
 
 export const metadata: Metadata = {
   title: "VendorPerk",
@@ -23,7 +24,9 @@ export default function RootLayout({
           content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no"
         />
 
-        <UserTypeProvider>{children}</UserTypeProvider>
+        <UserTypeProvider>
+          <ModalProvider>{children}</ModalProvider>
+        </UserTypeProvider>
       </body>
     </html>
   );
