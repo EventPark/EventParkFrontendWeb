@@ -6,10 +6,13 @@ interface WaitlistModalProps {
 }
 
 import { useUserType } from "@/app/context/UserTypeContext";
+import axios from "axios";
 import Image from "next/image";
+import { useSnackbar } from "notistack";
 import { useEffect, useState } from "react";
 
 export default function WaitlistModal({ isOpen, onClose }: WaitlistModalProps) {
+  const { enqueueSnackbar } = useSnackbar();
   const { userType } = useUserType();
   const [formData, setFormData] = useState({
     firstName: "",
@@ -17,15 +20,48 @@ export default function WaitlistModal({ isOpen, onClose }: WaitlistModalProps) {
     email: "",
     role: userType === "user" ? "event-planner" : "vendor",
   });
+  const [submittingForm, setSubmittingForm] = useState<boolean>(false);
 
-  // useEffect(() => {
-  //   return () => {
-  //     setFormData({
-  //       ...formData,
-  //       role: userType === "user" ? "event-planner" : "vendor",
-  //     });
-  //   };
-  // }, [formData, userType]);
+  const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+
+    if (!formData.firstName || !formData.lastName || !formData.email) {
+      enqueueSnackbar("All fields are required", {
+        variant: "warning",
+      });
+      return;
+    }
+
+    enqueueSnackbar("Adding you to the Vendorperk waitlist...", {
+      variant: "info",
+    });
+
+    setSubmittingForm(true);
+    try {
+      const response = await axios.post(
+        "https://dev-api.vendorperk.com/v1/waitlist",
+        formData,
+        {
+          headers: {
+            accept: "application/json",
+            "Content-Type": "application/json",
+          },
+        }
+      );
+      enqueueSnackbar("You have been successfully added to waitlist", {
+        variant: "success",
+      });
+      console.log(response.data);
+      onClose();
+    } catch (error) {
+      enqueueSnackbar("Something went wrong, try again later", {
+        variant: "error",
+      });
+      console.error(error);
+    } finally {
+      setSubmittingForm(false);
+    }
+  };
 
   return (
     <div
@@ -59,7 +95,12 @@ export default function WaitlistModal({ isOpen, onClose }: WaitlistModalProps) {
           <h1 className="text-[32px] font-bold text-primary tracking-[-0.96px]">
             Join the Waitlist
           </h1>
-          <div onSubmit={() => {}} className="mt-4 space-y-4">
+          <form
+            onSubmit={(e) => {
+              handleSubmit(e);
+            }}
+            className="mt-4 space-y-4"
+          >
             <div className="flex space-x-2">
               <div className="w-1/2 space-y-12">
                 <label htmlFor="firstName" className="text-sm">
@@ -93,7 +134,7 @@ export default function WaitlistModal({ isOpen, onClose }: WaitlistModalProps) {
               </div>
             </div>
             <div>
-              <label htmlFor="emai space-y-12l" className="text-sm">
+              <label htmlFor="email" className="text-sm">
                 Email
               </label>
               <input
@@ -107,8 +148,8 @@ export default function WaitlistModal({ isOpen, onClose }: WaitlistModalProps) {
                 className="w-full p-2 border rounded-[64px] mt-1.5"
               />
             </div>
-            <div className=" waitlist-select">
-              <label htmlFor="rol space-y-12" className="text-sm">
+            <div className="waitlist-select">
+              <label htmlFor="role" className="text-sm">
                 Role
               </label>
               <select
@@ -126,16 +167,17 @@ export default function WaitlistModal({ isOpen, onClose }: WaitlistModalProps) {
             </div>
             <button
               type="submit"
-              className={`p-2 rounded-[64px] px-5 py-3  ${
+              className={`p-2 rounded-[64px] px-5 py-3 flex items-center justify-center ${
                 userType === "user"
                   ? "bg-primary text-white "
                   : "bg-[#f0e8d1] text-black"
               }`}
+              disabled={submittingForm}
             >
               Be the first to know! 👌
             </button>
             <div className="mb-[32px]" />
-          </div>
+          </form>
         </div>
       </div>
     </div>

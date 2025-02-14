@@ -1,9 +1,8 @@
 import type { Metadata } from "next";
 import "./globals.css";
-import NavBar from "./components/ui/navbar";
-import WaitlistNavbar from "./components/waitlist/navbar";
 import { UserTypeProvider } from "./context/UserTypeContext";
 import { ModalProvider } from "./context/ModalContext";
+import { SnackbarProvider } from "notistack";
 
 export const metadata: Metadata = {
   title: "VendorPerk",

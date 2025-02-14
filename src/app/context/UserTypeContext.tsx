@@ -1,4 +1,5 @@
 "use client";
+import { SnackbarProvider } from "notistack";
 import React, { createContext, useContext, useState, ReactNode } from "react";
 
 type UserType = "user" | "vendor";
@@ -16,9 +17,11 @@ export const UserTypeProvider = ({ children }: { children: ReactNode }) => {
   const [userType, setUserType] = useState<UserType>("user");
 
   return (
-    <UserTypeContext.Provider value={{ userType, setUserType }}>
-      {children}
-    </UserTypeContext.Provider>
+    <SnackbarProvider>
+      <UserTypeContext.Provider value={{ userType, setUserType }}>
+        {children}
+      </UserTypeContext.Provider>
+    </SnackbarProvider>
   );
 };
 
