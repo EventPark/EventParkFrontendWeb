@@ -101,7 +101,7 @@ const WhatToExpect = () => {
           </div>
         </div>
       ) : (
-        <div className="md:h-[584px] relative bg-white o-red  overflow-hidden w-full flex gap-5 md:flex-row flex-col justify-center max-w-[1000px]">
+        <div className="md:h-[584px] relative bg-white    overflow-hidden w-full flex gap-5 md:flex-row flex-col justify-center max-w-[1000px]">
           <div className="px-5 pt-7 bg-[#fbf8f1] rounded-[14px] flex-col justify-start items-start gap-5 inline-flex overflow-hidden">
             <div data-svg-wrapper>
               <svg
@@ -130,7 +130,7 @@ const WhatToExpect = () => {
               </div>
             </div>
           </div>
-          <div className="flex flex-wrap gap-5 o-red ">
+          <div className="flex flex-wrap gap-5   ">
             <div className="px-5 pt-7 pb-10 bg-[#f7f2f5] rounded-[14px] flex-col justify-start items-start gap-14 inline-flex overflow-hidden w-full md:w-auto">
               <div data-svg-wrapper>
                 <svg
