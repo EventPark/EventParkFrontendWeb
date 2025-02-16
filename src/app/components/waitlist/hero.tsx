@@ -17,19 +17,19 @@ const Hero = () => {
         <h1 className=" font-bold flex flex-col">
           {userType == "user" ? (
             <>
-              <div className="text-center text-[#d0b2c3] text-[56px] font-bold f ont-['Rethink Sans'] leading-[56px]">
+              <div className="text-center text-[#d0b2c3] text-[56px] font-bold leading-[56px] tracking-[-4px]">
                 Big Plans?
               </div>
-              <div className="text-center text-primary text-[64px] font-bold font-['Rethink Sans'] leading-[64px]">
+              <div className="text-center text-primary text-[64px] font-bold leading-[64px] tracking-[-4px]">
                 We got You!
               </div>
             </>
           ) : (
             <>
-              <div className="text-center text-[#d6ceb7] text-[56px] font-bold  leading-[48px]">
+              <div className="text-center text-[#d6ceb7] text-[56px] font-bold leading-[48px] tracking-[-4px]">
                 Reach More
               </div>
-              <div className="text-center text-[#0b0300] text-[64px] font-bold font-['Rethink Sans'] leading-[64px]">
+              <div className="text-center text-[#0b0300] text-[64px] font-bold leading-[64px] tracking-[-4px]">
                 With Less
               </div>
             </>
