@@ -1,6 +1,5 @@
 "use client";
 
-import WaitlistModal from "../../../public/images/home/waitlist-modal";
 import BudgetSection from "@/app/components/home/budget";
 import FAQAccordion from "@/app/components/home/faq";
 import Footer from "@/app/components/home/footer";
@@ -42,7 +41,6 @@ export default function Home() {
       <PlanAnEvent />
       <Footer />
 
-      <WaitlistModal isOpen={isModalOpen} onClose={handleCloseModal} />
     </>
   );
 }

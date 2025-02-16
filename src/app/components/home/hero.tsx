@@ -4,8 +4,6 @@ import Image from "next/image";
 import { Button } from "@/app/components/ui/button";
 import VideoBackground from "./video-background";
 import Link from "next/link";
-import WaitlistModal from "../../../../public/images/home/waitlist-modal";
-import { useState } from "react";
 
 interface HeroSectionProps {
   openModal: () => void;
@@ -96,7 +94,6 @@ export default function HeroSection({ openModal }: HeroSectionProps) {
           </nav>
         </div>
       </div>
-      {/* <WaitlistModal isOpen={isModalOpen} onClose={handleCloseModal} /> */}
     </div>
   );
 }

@@ -17,7 +17,7 @@ const Hero = () => {
         <h1 className=" font-bold flex flex-col">
           {userType == "user" ? (
             <>
-              <div className="text-center text-[#d0b2c3] text-[56px] font-bold font-['Rethink Sans'] leading-[56px]">
+              <div className="text-center text-[#d0b2c3] text-[56px] font-bold f ont-['Rethink Sans'] leading-[56px]">
                 Big Plans?
               </div>
               <div className="text-center text-primary text-[64px] font-bold font-['Rethink Sans'] leading-[64px]">
@@ -77,7 +77,17 @@ const Hero = () => {
         </div>
       </div>
       <Modal>
-        <WaitlistModal isOpen={isOpen} onClose={closeModal} />
+        {isOpen && (
+          <React.Suspense
+            fallback={
+              <div className="flex justify-center items-center">
+                <div className="animate-spin rounded-full h-8 w-8 border-t-2 border-b-2 border-gray-900"></div>
+              </div>
+            }
+          >
+            <WaitlistModal onClose={closeModal} />
+          </React.Suspense>
+        )}
       </Modal>
     </div>
   );
