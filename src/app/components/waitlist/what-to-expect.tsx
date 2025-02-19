@@ -30,7 +30,7 @@ const WhatToExpect = () => {
               <h4 className="text-[28px] font-medium text-black">
                 Budget Planner
               </h4>
-              <p className="text-[#8E8E93] text-[16px] tracking-[-0.48px] ">
+              <p className="text-[#8E8E93] text-base tracking-[-0.48px] ">
                 Stay on top of your event expenses with smart, stress-free
                 budgeting.
               </p>
@@ -47,7 +47,7 @@ const WhatToExpect = () => {
               <h4 className="text-[28px] font-medium text-black">
                 Guest Management
               </h4>
-              <p className="text-[#8E8E93] text-[16px] tracking-[-0.48px]">
+              <p className="text-[#8E8E93] text-base tracking-[-0.48px]">
                 Easily track RSVPs, send invites, and manage your guest list in
                 one place.
               </p>
@@ -59,7 +59,7 @@ const WhatToExpect = () => {
               <h4 className="text-[28px] font-medium text-black">
                 AI Event Planning Partner
               </h4>
-              <p className="text-[#8E8E93] text-[16px] tracking-[-0.48px]">
+              <p className="text-[#8E8E93] text-base tracking-[-0.48px]">
                 Smart recommendations for effortless planning
               </p>
             </div>
@@ -70,8 +70,8 @@ const WhatToExpect = () => {
               <h4 className="text-[28px] font-medium text-black">
                 Event Websites
               </h4>
-              <p className="text-[#8E8E93] text-[16px] tracking-[-0.48px]"></p>
-              <p className="text-[#8E8E93] text-[16px] tracking-[-0.48px]">
+              <p className="text-[#8E8E93] text-base tracking-[-0.48px]"></p>
+              <p className="text-[#8E8E93] text-base tracking-[-0.48px]">
                 Create a stunning, shareable event page for seamless
                 coordination.
               </p>
@@ -83,7 +83,7 @@ const WhatToExpect = () => {
               <h4 className="text-[28px] font-medium text-black">
                 Gifting registry
               </h4>
-              <p className="text-[#8E8E93] text-[16px] tracking-[-0.48px]">
+              <p className="text-[#8E8E93] text-base tracking-[-0.48px]">
                 Let guests celebrate you with the perfect gifts, hassle-free.
               </p>
             </div>
@@ -94,7 +94,7 @@ const WhatToExpect = () => {
               <h4 className="text-[28px] font-medium text-black">
                 So much more...
               </h4>
-              <p className="text-[#8E8E93] text-[16px] tracking-[-0.48px]">
+              <p className="text-[#8E8E93] text-base tracking-[-0.48px]">
                 Everything you need for stress-free event planning!
               </p>
             </div>

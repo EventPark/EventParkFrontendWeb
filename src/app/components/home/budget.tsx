@@ -31,7 +31,7 @@ export default function BudgetSection() {
                   Plan <br /> with Confidence.
                 </span>
               </h3>
-              <p className="text-[16px] md:text-2xl text-[#7f7f7f] tracking-[-0.6px] fon-normal">
+              <p className="text-base md:text-2xl text-[#7f7f7f] tracking-[-0.6px] fon-normal">
                 There&apos;s always a vendor that meets <br /> your needs.
               </p>
               <Image

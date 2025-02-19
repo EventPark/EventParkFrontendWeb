@@ -1,8 +1,6 @@
 "use client";
 
 import FAQAccordion from "./components/home/faq";
-import CopyRight from "./components/ui/copy-right";
-
 import Footer from "./components/waitlist/footer";
 import Hero from "./components/waitlist/hero";
 import WhatToExpect from "./components/waitlist/what-to-expect";

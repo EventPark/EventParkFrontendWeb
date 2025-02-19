@@ -159,7 +159,7 @@ export default function Steps() {
               >
                 {item.heading}
               </h3>
-              <p className="text-[16px] mt-2 w-[270px] text-[#8E8E93]">
+              <p className="text-base mt-2 w-[270px] text-[#8E8E93]">
                 {item.description}
               </p>
             </div>

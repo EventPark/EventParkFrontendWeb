@@ -65,7 +65,7 @@ const FAQAccordion = () => {
                   openIndex === index
                     ? "text-primary font-medium"
                     : "text-[#808084]"
-                } text-[16px] md:text-[18px] tracking-[-0.48px] transition duration-500`}
+                } text-base md:text-[18px] tracking-[-0.48px] transition duration-500`}
               >
                 {faq.question}
               </div>

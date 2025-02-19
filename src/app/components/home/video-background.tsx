@@ -1,13 +1,23 @@
+import { useUserType } from "@/app/context/UserTypeContext";
 import Image from "next/image";
-import { useState } from "react";
+import { useState, useEffect, useRef } from "react";
 
 export default function VideoBackground() {
+  const { userType } = useUserType();
   const [videoError, setVideoError] = useState(false);
+  const videoRef = useRef<HTMLVideoElement>(null);
+
+  useEffect(() => {
+    if (videoRef.current) {
+      videoRef.current.load();
+    }
+  }, [userType]);
 
   return (
     <div>
       {!videoError ? (
         <video
+          ref={videoRef}
           autoPlay
           loop
           muted
@@ -15,12 +25,23 @@ export default function VideoBackground() {
           className="absolute inset-0 w-full h-full object-cover"
           onError={() => setVideoError(true)}
         >
-          <source src="/videos/home_video.mp4" type="video/mp4" />
+          <source
+            src={
+              userType == "user"
+                ? "/videos/home_video.mp4"
+                : "/videos/vendor_video.mp4"
+            }
+            type="video/mp4"
+          />
           Your browser does not support the video tag.
         </video>
       ) : (
         <Image
-          src="/images/home_image.png"
+          src={
+            userType == "user"
+              ? "/images/home_image.png"
+              : "/images/vendor/home_image.png"
+          }
           alt="Fallback"
           width={1920}
           height={1080}

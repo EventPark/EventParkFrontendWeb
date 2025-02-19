@@ -83,7 +83,7 @@ const TestimonialCard = ({
 
 const TestimonialSection = () => {
   return (
-    <div className="bg-[#FAFAFD] py-[90px] md:px-40 flex flex-col items-center ">
+    <div className="bg-[#FAFAFD] py-[90px] flex flex-col items-center justify-center md:max-w-[1920px] mx-auto ">
       <h6 className="text-[#B3B3B3] font-normal text-sm tracking-[1.68px]">
         TESTEMONIALS
       </h6>
@@ -94,7 +94,7 @@ const TestimonialSection = () => {
         Anytime, Anywhere.
       </p>
 
-      <div className="relative overflow-hidden py-8 space-y-8 w-full">
+      <div className="relative overflow-hidden py-8 space-y-8 w-full ">
         {/* Upper Row - Moves Right */}
         <motion.div
           className="flex space-x-6 mb-4"

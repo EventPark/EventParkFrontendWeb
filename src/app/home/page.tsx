@@ -11,36 +11,51 @@ import PlanAnEvent from "@/app/components/home/plan-an-event";
 import StatsSection from "@/app/components/home/statistics";
 import Steps from "@/app/components/home/steps";
 import TestimonialSection from "@/app/components/home/testemonials";
-import VendorSection from "@/app/components/home/vendor";
+import UserVendorSection from "@/app/components/home/vendor";
 import VendorMessagingSection from "@/app/components/home/vendor-messaging";
 import AISection from "@/app/components/home/vendor_perk_ai";
-import { useState } from "react";
+import { useUserType } from "../context/UserTypeContext";
+import WhyChooseUsSection from "../components/home/vendor/why-choose-us";
+import ChannelSection from "../components/home/vendor/channel";
+import OnlineMarketPlaceSection from "../components/home/vendor/online_marketplace";
+import WalletSystemSection from "../components/home/vendor/wallet-system";
+import HassleFreeSection from "../components/home/vendor/hassle_free";
+import VendorSteps from "../components/home/vendor/steps";
 
 export default function Home() {
-  const [isModalOpen, setIsModalOpen] = useState(true);
-
-  const handleCloseModal = () => {
-    setIsModalOpen(false);
-  };
+  const { userType } = useUserType();
   return (
-    <>
-      <div className="flex flex-col gap-7">
-        <HeroSection openModal={() => setIsModalOpen(true)} />
-        <VendorSection />
-        <BudgetSection />
+    <div className="w-full o-red">
+      <HeroSection />
+      <div className="flex flex-col gap-7 md:max-w-[1920px] w-full mx-auto">
+        {userType == "user" ? <UserVendorSection /> : <WhyChooseUsSection />}
+        {userType == "user" ? <BudgetSection /> : <ChannelSection />}
         <GuestSection />
-        <AISection />
-        <VendorMessagingSection />
-        <PersonalisedWebsitesSection />
-        <GiftSection />
-        <StatsSection />
-        <Steps />
+        {userType == "user" ? <AISection /> : <OnlineMarketPlaceSection />}
+
+        {userType == "user" ? (
+          <VendorMessagingSection />
+        ) : (
+          <WalletSystemSection />
+        )}
+        {userType == "user" ? (
+          <PersonalisedWebsitesSection />
+        ) : (
+          <HassleFreeSection />
+        )}
+        {userType == "user" && (
+          <>
+            <GiftSection />
+            <StatsSection />
+          </>
+        )}
+
+        {userType == "user" ? <Steps /> : <VendorSteps />}
       </div>
       <TestimonialSection />
       <FAQAccordion />
       <PlanAnEvent />
       <Footer />
-
-    </>
+    </div>
   );
 }

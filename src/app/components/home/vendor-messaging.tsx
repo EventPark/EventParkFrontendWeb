@@ -34,7 +34,7 @@ export default function VendorMessagingSection() {
               Connect, chat and <br />
               <span className="text-[#CCC9E7]">Plan Effortlessly</span>
             </h3>
-            <p className="text-[16px] md:text-2xl text-[#8E8E93] tracking-[-0.6px] fon-normal">
+            <p className="text-base md:text-2xl text-[#8E8E93] tracking-[-0.6px] fon-normal">
               Direct messaging with vendors to streamline planning and make your
               event a success.
             </p>

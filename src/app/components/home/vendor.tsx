@@ -1,7 +1,7 @@
 import Image from "next/image";
 import { Button } from "../ui/button";
 
-export default function VendorSection() {
+export default function UserVendorSection() {
   return (
     <div
       className="pt-[74px] pb-[91px]  bg-center bg-no-repeat bg-[url('/images/home/marketplace_album_mobile.png')] md:bg-[url('/images/home/marketplace_album.png')]"

@@ -4,61 +4,63 @@ import Image from "next/image";
 import { Button } from "@/app/components/ui/button";
 import VideoBackground from "./video-background";
 import Link from "next/link";
+import { useUserType } from "@/app/context/UserTypeContext";
 
-interface HeroSectionProps {
-  openModal: () => void;
-}
-
-export default function HeroSection({ openModal }: HeroSectionProps) {
+export default function HeroSection() {
+  const { userType, setUserType } = useUserType();
   return (
-    <div className="relative bg-black h-screen w-full flex items-center justify-center text-white flex-col">
+    <div className="relative bg-black  h-screen  w-full flex items-center justify-center text-white flex-col">
       <VideoBackground />
 
-      <div className="relative z-10 text-center px-6">
+      <div className="relative z-10 text-center px-6 flex flex-col items-center">
         <h1 className="text-center md:text-left font-bold text-transparent bg-clip-text bg-gradient-to-t from-white/100 to-white/37 p-5">
           <span
             className="text-5xl md:text-[110px]"
             style={{ letterSpacing: "-0.06em" }}
           >
-            Dream Big,
+            {userType == "user" ? " Dream Big" : "Reach More"},
           </span>{" "}
           <br />
           <span
             className="text-7xl md:text-9xl"
             style={{ letterSpacing: "-0.05em" }}
           >
-            Plan Easy.
+            {userType == "user" ? " Plan Easy" : "With Less"}.
           </span>
         </h1>
+        <div className="md:w-[460px] text-center  text-lg   text-white/90 md:text-xl opacity-85  leading-[33.60px]">
+          {userType == "user"
+            ? "Find the right vendors, create amazing events and trust us to handle the rest."
+            : "Join the leading platform connecting vendors with event planners"}
+        </div>
 
-        <p className="text-lg md:text-xl mt-4 max-w-2xl mx-auto opacity-85">
-          Find the right vendors, create amazing <br /> events, and let us
-          handle the rest
-        </p>
         <Button
           className="my-6 font-bold bg-white text-black hover:bg-gray-200"
-          onClick={openModal}
+          onClick={() => {}}
         >
-          Plan an Event 🎉
+          {userType == "user" ? "Plan an Event 🎉" : "Join as a Vendor"}
         </Button>
         {/* Navigation */}
         <div className="pt-16 bottom-6 w-full justify-center hidden md:flex">
-          <nav className="  px-6 py-3 rounded-full flex gap-4">
+          <nav className="  px-6 py-3 rounded-full flex gap-4 ">
             <div className="flex flex-col gap-3 items-center justify-center">
-              <Link
-                href="#"
-                className="text-white text-sm px-4 py-2 rounded-full bg-[#FFFFFF19]"
+              <Button
+                onClick={() => setUserType("user")}
+                className={` uppercase font-bold  text-white text-sm px-4 py-2 rounded-full group-hover:bg-[#FFFFFF19] ${
+                  userType == "user" && "bg-[#FFFFFF19]"
+                }`}
               >
-                Home
-              </Link>
+                <span className="tracking-[1.12px]">Home</span>
+              </Button>
 
-              <div className="rounded-full w-1 h-1 bg-white"></div>
+              <div
+                className={`rounded-full w-1 h-1 bg-white   ${
+                  userType == "user" ? "opacity-100" : "opacity-0"
+                }`}
+              ></div>
             </div>
             <div className="flex flex-col gap-3 items-center justify-center group cursor-pointer">
-              <Link
-                href="#"
-                className="text-white text-sm px-4 py-2 rounded-full group-hover:bg-[#FFFFFF19] transition-all duration-300 flex gap-2 items-center"
-              >
+              <Button className="uppercase tracking-[1.12px] font-bold  text-white text-sm px-4 py-2 rounded-full group-hover:bg-[#FFFFFF19] transition-all duration-300 flex gap-2 items-center">
                 Company{" "}
                 <Image
                   src={"/icons/arrow-down.svg"}
@@ -66,28 +68,32 @@ export default function HeroSection({ openModal }: HeroSectionProps) {
                   width={12}
                   height={6}
                 />
-              </Link>
+              </Button>
 
               <div className="rounded-full w-1 h-1 bg-white opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
             </div>
 
             <div className="flex flex-col gap-3 items-center justify-center group cursor-pointer">
-              <Link
-                href="#"
-                className="text-white text-sm px-4 py-2 rounded-full group-hover:bg-[#FFFFFF19] transition-all duration-300"
+              <Button
+                className={`uppercase tracking-[1.12px] font-bold  text-white text-sm px-4 py-2 rounded-full group-hover:bg-[#FFFFFF19] transition-all duration-300 ${
+                  userType == "vendor" && "bg-[#FFFFFF19]"
+                }`}
+                onClick={() => {
+                  setUserType("vendor");
+                }}
               >
                 For Vendors
-              </Link>
-
-              <div className="rounded-full w-1 h-1 bg-white opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+              </Button>{" "}
+              <div
+                className={`rounded-full w-1 h-1 bg-white  group-hover:opacity-100 transition-opacity duration-300 ${
+                  userType == "vendor" ? "opacity-100" : "opacity-0"
+                }`}
+              />
             </div>
             <div className="flex flex-col gap-3 items-center justify-center group cursor-pointer">
-              <Link
-                href="#"
-                className="text-white text-sm px-4 py-2 rounded-full group-hover:bg-[#FFFFFF19] transition-all duration-300"
-              >
+              <Button className="uppercase tracking-[1.12px] font-bold  text-white text-sm px-4 py-2 rounded-full group-hover:bg-[#FFFFFF19] transition-all duration-300">
                 Marketplace
-              </Link>
+              </Button>
 
               <div className="rounded-full w-1 h-1 bg-white opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
             </div>

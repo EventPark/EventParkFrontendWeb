@@ -3,7 +3,7 @@ import { Button } from "../ui/button";
 
 export default function PlanAnEvent() {
   return (
-    <div className="relative z-10 text-center px-6 bg-[url('/images/home/plan-as-event.svg')] bg-center bg-cover h-[442px] md:h-[760px] flex flex-col justify-center items-center">
+    <div className="relative z-10 text-center px-6 bg-[url('/images/home/plan-as-event.svg')] bg-center bg-cover h-[442px] md:h-[760px] flex flex-col justify-center items-center md:max-w-[1920px] mx-auto">
       <h1 className="text-center font-medium text-white from-white/100 to-white/37 ">
         <span
           className="text-[28px] md:text-[56px]"

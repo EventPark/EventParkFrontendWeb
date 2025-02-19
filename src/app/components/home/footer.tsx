@@ -4,7 +4,7 @@ import Logo from "../ui/logo";
 
 export default function Footer() {
   return (
-    <>
+    <div className="md:max-w-[1920px] mx-auto">
       <footer className="bg-black text-white p-6 md:px-40 pt-[50px]">
         <Logo />
         <div className="mx-auto grid grid-cols-2 md:grid-cols-6 gap-6 py-9">
@@ -71,6 +71,6 @@ export default function Footer() {
         </div>
       </footer>
       <CopyRight />
-    </>
+    </div>
   );
 }

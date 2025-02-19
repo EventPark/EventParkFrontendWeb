@@ -30,7 +30,7 @@ export default function AISection() {
               AI-powered <br />
               <span className="text-[#BDB59E]">Plan Effortlessly</span>
             </h3>
-            <h6 className="text-[#716952] tracking-[-0.48px] text-[16px] md:text-2xl">
+            <h6 className="text-[#716952] tracking-[-0.48px] text-base md:text-2xl">
               Let AI handle the details! Get smart <br /> reminders, vendor
               suggestions, and <br /> seamless event management.
             </h6>
