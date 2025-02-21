@@ -8,7 +8,7 @@ export default function WhyChooseUsSection() {
       <div className="w-full md:w-[443px] text-center mb-20 text-[32px] md:text-5xl font-medium tracking-[-1.44px] md:tracking-[-2.4px] mx-auto">
         Here&apos;s why vendors choose us
       </div>
-      <div className="gap-5 md:gap-7 flex mx-auto relative overflow-x-scroll transition-all duration-1200 no-scrollbar">
+      <div className="gap-5 md:gap-7 justify-center flex mx-auto relative overflow-x-scroll transition-all duration-1200 no-scrollbar">
         <div className=" min-w-[350px] max-w-[358px] inline-flex h-[497px] flex-col justify-end pb-12 shadow-md rounded-lg flex-shrink-0 bg-cover bg-no-repeat bg-[url('/images/vendor/carousel/bg_one.svg')]">
           <div className="flex flex-col gap-y-4 px-6">
             <div className=" text-[28px] md:text-[32px] font-medium tracking-[-1.28px]w-[259px] ">
