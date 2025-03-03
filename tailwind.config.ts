@@ -20,7 +20,7 @@ const config: Config = {
         standard: "-1.26px",
       },
       fontFamily: {
-        satoshi: ["Rethink Sans", ...fontFamily.sans],
+        rethink: ["Rethink Sans", ...fontFamily.sans],
       },
     },
   },

@@ -8,8 +8,8 @@ export default function GuestSection() {
       <div
         className={`${
           userType == "user"
-            ? "bg-[url('/images/home/guest_mobile.png')] md:bg-[url('/images/home/guest.png')] md:h-[720px] xl:h-[1024] h-[498px] md:bg-center"
-            : "bg-[url('/images/vendor/analytics_mobile.png')] md:bg-[url('/images/vendor/analytics.png')] md:h-[960px] xl:h-[1024] sm: h-760px] h-[650px]  bg-left md:bg-center"
+            ? "bg-[url('/images/home/guest_mobile.png')] md:bg-[url('/images/home/guest.png')] md:h-[720px] xl:h-[1024px] h-[40rem] md:bg-center"
+            : "bg-[url('/images/vendor/analytics_mobile.png')] md:bg-[url('/images/vendor/analytics.png')] md:h-[960px] xl:h-[1024] sm: h-760px] h-[40rem]  bg-left md:bg-center"
         }    flex flex-col items-start md:items-center gap-3 rounded-[16px] py-10 md:py-20 px-5  bg-cover bg-bottom bg-no-repeat `}
       >
         <p

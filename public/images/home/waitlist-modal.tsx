@@ -9,7 +9,7 @@ import axios from "axios";
 import Image from "next/image";
 import Link from "next/link";
 import { useSnackbar } from "notistack";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 export default function WaitlistModal({ onClose }: WaitlistModalProps) {
   const { enqueueSnackbar } = useSnackbar();
@@ -41,7 +41,8 @@ export default function WaitlistModal({ onClose }: WaitlistModalProps) {
     setSubmittingForm(true);
     try {
       const response = await axios.post(
-        `https://dev-api.vendorperk.com/v1/waitlist`,
+        // `https://dev-api.vendorperk.com/v1/waitlist`,
+        `${process.env.NEXT_PUBLIC_API_URL}${process.env.NEXT_PUBLIC_WAITLIST_URL}`,
         formData,
         {
           headers: {
@@ -63,6 +64,12 @@ export default function WaitlistModal({ onClose }: WaitlistModalProps) {
       setSubmittingForm(false);
     }
   };
+
+  useEffect(() => {
+    console.log(
+      `${process.env.NEXT_PUBLIC_API_URL}${process.env.NEXT_PUBLIC_WAITLIST_URL}`
+    );
+  }, []);
 
   return (
     <div

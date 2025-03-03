@@ -11,6 +11,7 @@
 # next.js
 /.next/
 /src/app/framer
+/src/app/burger
 /out/
 
 # production

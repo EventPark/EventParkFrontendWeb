@@ -78,11 +78,42 @@ body {
 
 .waitlist-select select {
   width: 100%; /* Ensure the select takes the full width of the container */
-
   background-color: #fff;
   padding: 0.5em;
   font-size: 1em;
   line-height: 1.5;
 }
+.curved-div {
+  height: 22rem;
+  position: relative;
+  overflow-x: hidden;
+}
+@media (min-width: 768px) {
+  .curved-div:after,
+  .curved-div-top:after {
+    display: none;
+  }
+}
 
+.curved-div:after,
+.curved-div-top:after {
+  content: "";
+  position: absolute;
+  overflow-x: hidden;
+  bottom: -1%;
+  width: 100%;
+  height: 60px;
+  background: #fff;
+  -webkit-clip-path: ellipse(50% 40% at 50% 100%);
+  clip-path: ellipse(70% 40% at 50% 100%);
+}
 /* Add more styles for other weights and italics */
+.curved-div-top {
+  height: 22rem;
+}
+
+.curved-div-top:after {
+  top: 0%;
+  bottom: 0 !important;
+  clip-path: ellipse(100% 60% at 50% 0%);
+}

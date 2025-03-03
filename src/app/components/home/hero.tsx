@@ -58,7 +58,7 @@ export default function HeroSection() {
                 </Button>
 
                 <div
-                  className={`rounded-full w-1 h-1 bg-white   ${
+                  className={`hidden md:flex rounded-full w-1 h-1 bg-white   ${
                     userType == "user" ? "opacity-100" : "opacity-0"
                   }`}
                 ></div>
@@ -74,7 +74,7 @@ export default function HeroSection() {
                   />
                 </Button>
 
-                <div className="rounded-full w-1 h-1 bg-white opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+                <div className="hidden md:flex rounded-full w-1 h-1 bg-white opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
               </div>
 
               <div className="flex flex-col gap-3 items-center justify-center group cursor-pointer">
@@ -89,7 +89,7 @@ export default function HeroSection() {
                   For Vendors
                 </Button>{" "}
                 <div
-                  className={`rounded-full w-1 h-1 bg-white  group-hover:opacity-100 transition-opacity duration-300 ${
+                  className={`hidden md:flex rounded-full w-1 h-1 bg-white  group-hover:opacity-100 transition-opacity duration-300 ${
                     userType == "vendor" ? "opacity-100" : "opacity-0"
                   }`}
                 />
@@ -99,7 +99,7 @@ export default function HeroSection() {
                   Marketplace
                 </Button>
 
-                <div className="rounded-full w-1 h-1 bg-white opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+                <div className="hidden md:flex rounded-full w-1 h-1 bg-white opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
               </div>
             </nav>
           </div>
