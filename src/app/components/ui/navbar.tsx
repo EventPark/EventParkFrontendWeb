@@ -3,7 +3,7 @@ import Logo from "./logo";
 import Image from "next/image";
 import { slide as Menu } from "react-burger-menu";
 import { UserType, useUserType } from "@/app/context/UserTypeContext";
-import { Button } from "./button";
+import { Button } from "../ui";
 
 const NavBar = () => {
   const [isMobileNavOpen, setIsMobileNavOpen] = useState<boolean>(false);

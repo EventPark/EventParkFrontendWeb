@@ -3,7 +3,7 @@
 import { useState } from "react";
 import { motion } from "framer-motion";
 import Image from "next/image";
-import { Button } from "../ui/button";
+import { Button } from "../ui";
 
 const faqs = [
   {

@@ -1,7 +1,7 @@
 "use client";
 
 import Image from "next/image";
-import { Button } from "@/app/components/ui/button";
+import { Button } from "@/app/components";
 import VideoBackground from "./video-background";
 import Link from "next/link";
 import { useUserType } from "@/app/context/UserTypeContext";

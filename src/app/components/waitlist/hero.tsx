@@ -1,6 +1,6 @@
 import React from "react";
 import WaitlistNavbar from "./navbar";
-import { Button } from "../ui/button";
+import { Button } from "../ui";
 import Image from "next/image";
 import { useUserType } from "@/app/context/UserTypeContext";
 import { useModal } from "@/app/context/ModalContext";

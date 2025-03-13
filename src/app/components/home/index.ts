@@ -1,0 +1,16 @@
+export { default as GuestSection } from "./guest";
+export { default as PlanAnEvent } from "./plan-an-event";
+export { default as BudgetSection } from "./budget";
+export { default as GiftSection } from "./gift";
+export { default as PersonalisedWebsitesSection } from "./personalised";
+export { default as StatsSection } from "./statistics";
+export { default as UserVendorSection } from "./vendor";
+export { default as VendorMessagingSection } from "./vendor-messaging";
+export { default as AISection } from "./vendor_perk_ai";
+export { default as VideoBackground } from "./video-background";
+export { default as Steps } from "./steps";
+export { default as TestimonialCard } from "./testemonials";
+export { default as FAQAccordion } from "./faq";
+export { default as Footer } from "./footer";
+export { default as HeroSection } from "./hero";
+export { default as TestimonialSection } from "./testemonials";

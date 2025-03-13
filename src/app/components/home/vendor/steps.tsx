@@ -1,3 +1,6 @@
+import React from "react";
+import Image from "next/image";
+
 export default function VendorSteps() {
   return (
     <div className="md:px-40 px-5">
@@ -11,44 +14,45 @@ export default function VendorSteps() {
   );
 }
 
-export const VendorStepsCards = () => {
+const VendorStepsCards = () => {
+  const steps = [
+    {
+      title: "Create Account",
+      description: "Sign up and create your vendor profile",
+      icon: "/icons/account.svg",
+    },
+    {
+      title: "List Services",
+      description: "Add your services and set pricing",
+      icon: "/icons/services.svg",
+    },
+    {
+      title: "Start Selling",
+      description: "Get discovered and start receiving orders",
+      icon: "/icons/selling.svg",
+    },
+  ];
+
   return (
     <>
-      <div className=" min-w-[350px] w-[30%]  h-[470px] px-5 pt-12 pb-[230px] bg-gradient-to-b from-[#f7f2f5] to-white rounded-xl flex-col justify-start items-center inline-flex overflow-hidden">
-        <div className="self-stretch h-48 flex-col justify-start items-start gap-5 inline-flex">
-          <div className="text-[#333333] text-4xl font-medium">
-            Create Your <br />
-            Profile
-          </div>
-          <div className="self-stretch text-[#8e8e93] text-base font-medium">
-            Sign up today and create a standout vendor profile to showcase your
-            services, attract clients, and grow your business.
-          </div>
-        </div>
-      </div>
-      <div className=" min-w-[350px] w-[30%]  h-[470px] px-5 pt-12 pb-[230px] bg-gradient-to-b from-[#fcfaf6] to-white rounded-xl flex-col justify-start items-center inline-flex overflow-hidden">
-        <div className="self-stretch h-48 flex-col justify-start items-start gap-5 inline-flex">
-          <div className="text-[#333333] text-4xl font-medium">
-            Showcase Your <br />
-            Services
-          </div>
-          <div className="self-stretch text-[#8e8e93] text-base font-medium">
-            Sign up today and create a standout vendor profile to showcase your
-            services, attract clients, and grow your business.
+      {steps.map((step, index) => (
+        <div
+          key={index}
+          className="min-w-[330px] h-[20rem] flex items-center justify-center rounded-lg bg-white p-6 shadow-md"
+        >
+          <div className="flex flex-col items-center text-center">
+            <Image
+              src={step.icon}
+              alt={step.title}
+              width={80}
+              height={80}
+              className="mb-4"
+            />
+            <h3 className="text-xl font-medium mb-2">{step.title}</h3>
+            <p className="text-gray-600">{step.description}</p>
           </div>
         </div>
-      </div>
-      <div className=" min-w-[350px] w-[30%]  h-[470px] px-5 pt-12 pb-[230px] bg-gradient-to-b from-[#f5f4fa] to-white rounded-xl flex-col justify-start items-center inline-flex overflow-hidden">
-        <div className="self-stretch h-48 flex-col justify-start items-start gap-5 inline-flex">
-          <div className="text-[#333333] text-4xl font-medium">
-            Start Receiving Bookings
-          </div>
-          <div className="self-stretch text-[#8e8e93] text-base font-medium">
-            Sign up today and create a standout vendor profile to showcase your
-            services, attract clients, and grow your business.
-          </div>
-        </div>
-      </div>
+      ))}
     </>
   );
 };

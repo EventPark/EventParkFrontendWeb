@@ -1,8 +1,9 @@
 "use client";
 import Image from "next/image";
-import { Button } from "../ui/button";
+
 import { useEffect, useState } from "react";
 import aiLottieAnimation from "../../../../public/images/home/ai_lottie.json";
+import { Button } from "../ui";
 
 export default function AISection() {
   const [Lottie, setLottie] = useState<any>(null);

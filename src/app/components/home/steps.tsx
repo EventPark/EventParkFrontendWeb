@@ -1,7 +1,7 @@
 "use client";
 
 import React, { useEffect, useRef, useState, Suspense, lazy } from "react";
-import { Button } from "../ui/button";
+import { Button } from "../ui";
 import TailoredLottie from "../../../../public/images/home/steps/tailored_lottie.json";
 import BookLottie from "../../../../public/images/home/steps/book_lottie.json";
 import ConverseLottie from "../../../../public/images/home/steps/converse_lotttie.json";

@@ -1,4 +1,4 @@
-import { Button } from "../ui/button";
+import { Button } from "../ui";
 import CopyRight from "../ui/copy-right";
 import Logo from "../ui/logo";
 
