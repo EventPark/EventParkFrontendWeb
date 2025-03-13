@@ -8,7 +8,7 @@ export default function PlanAnEvent() {
     <div
       className={`${
         userType == "user"
-          ? "bg-[url('/images/home/plan-as-event.svg')]"
+          ? "bg-[url('/images/home/plan-as-event.png')]"
           : "bg-[url('/images/vendor/plan-as-event-vendor-mobile.svg')] md:bg-[url('/images/vendor/plan-as-event-vendor.svg')]"
       } relative z-10 text-center px-6  bg-center bg-cover h-[442px] md:h-[760px] flex flex-col justify-center items-center md:max-w-[1920px] mx-auto`}
     >

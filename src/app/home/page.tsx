@@ -25,7 +25,7 @@ import VendorSteps from "../components/home/vendor/steps";
 export default function Home() {
   const { userType } = useUserType();
   return (
-    <div className="w-full o-red">
+    <div className="w-full ">
       <HeroSection />
       <div className="flex flex-col gap-7 md:max-w-[1920px] w-full mx-auto">
         {userType == "user" ? <UserVendorSection /> : <WhyChooseUsSection />}

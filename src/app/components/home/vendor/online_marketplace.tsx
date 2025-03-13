@@ -1,3 +1,4 @@
+import Image from "next/image";
 import React from "react";
 
 type Props = {};
@@ -5,7 +6,7 @@ type Props = {};
 const OnlineMarketPlaceSection = (props: Props) => {
   return (
     <div className="px-5 md:px-40 rounded-[16px] md:rounded-[24px]">
-      <div className="bg-[url('/images/vendor/online_marketplace_mobile.png')] md:bg-[url('/images/vendor/online_marketplace.png')] md:h-[720px] xl:h-[1024] sm:h-[760px] h-[650px]  md:bg-center flex flex-col items-start md:items-center gap-3 rounded-[16px] py-10 md:py-20 px-5 bg-cover bg-bottom bg-no-repeat">
+      <div className="bg-[#FCFAF6] flex flex-col items-start md:items-center gap-3 rounded-[16px] pt-10 md:pt-20 px-5 md:px-[76px] ">
         <p className="text-black text-sm md:text-[18px] font-normal tracking-[1.68px] md:tracking-[2.16px]">
           ONLINE MARKETPLACE
         </p>
@@ -14,6 +15,15 @@ const OnlineMarketPlaceSection = (props: Props) => {
           <br />
           <span className="text-[#BDB59E]">Wider Reach</span>
         </h3>
+        <div className=" md:mt-[72px] w-full min-h-[310px] md:min-h-[420px] relative pt-0 ">
+          <Image
+            alt="Online marketplace illustration"
+            src="/images/vendor/online_marketplace.png"
+            layout="fill"
+            objectFit="contain"
+            priority
+          />
+        </div>
       </div>
     </div>
   );

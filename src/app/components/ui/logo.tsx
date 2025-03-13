@@ -20,7 +20,7 @@ const Logo: React.FC<LogoProps> = ({
             ? "/images/brand/waitlist_logo.svg"
             : "/images/brand/navbar_logo.svg"
         }
-        alt="Vendor Perk Logo"
+        alt="Event Park Perk Logo"
         width={width}
         height={height}
       />
@@ -31,7 +31,7 @@ const Logo: React.FC<LogoProps> = ({
             : "text-white text-[20px] md:text-[24px] font-bold tracking-[-0.02em] text-center"
         }
       >
-        VendorPerk.
+        EventPark.
       </span>
     </div>
   );

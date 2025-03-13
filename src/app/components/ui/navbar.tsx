@@ -75,7 +75,7 @@ const NavBar = () => {
       >
         <div
           id="page-wrap"
-          className="space-y-64 text-center px-5 py-4 flex flex-col items-center justify-between h-full o-red"
+          className="space-y-64 text-center px-5 py-4 flex flex-col items-center justify-between h-full "
         >
           <div className="space-y-4 text-center px-5 py-4 flex flex-col items-center justify-center">
             <div

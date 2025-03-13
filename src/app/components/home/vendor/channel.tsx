@@ -30,23 +30,13 @@ const ChannelSection = () => {
 
       <div className="w-full md:w-[40%] max-w-3xl">
         <Image
-          src="/images/vendor/channel.svg"
+          src="/images/vendor/channel.png"
           alt="Description"
           width={353}
           height={403}
           layout="responsive"
-          // className="flex md:hidden"
           style={{ objectFit: "cover" }}
         />
-        {/* <Image
-          src="/images/vendor/channel.svg"
-          alt="Description"
-          width={353}
-          height={403}
-          layout="responsive"
-          className=" md:flex hidden"
-          style={{ objectFit: "cover" }}
-        /> */}
       </div>
     </div>
   );

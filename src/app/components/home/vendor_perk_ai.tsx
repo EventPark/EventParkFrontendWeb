@@ -14,19 +14,26 @@ export default function AISection() {
   }, []);
 
   return (
-    <div className="md:flex-row flex-col px-5 md:px-40 gap-8 flex h-full">
-      <div className="order-2 md:order-1 w-full md:w-[40%] max-w-3xl">
-        <div className="hidden md:flex">
-          {Lottie && <Lottie animationData={aiLottieAnimation} loop={true} />}
-        </div>
+    <div className="md:flex-row flex-col px-5 md:px-40  flex h-full gap-8">
+      <div className="hidden order-2 md:order-1 md:flex w-full md:w-[40%] max-w-3xl ">
+        {Lottie && (
+          <div className="w-full h-full">
+            <Lottie
+              animationData={aiLottieAnimation}
+              loop={true}
+              style={{ width: "100%", height: "100%", objectFit: "cover" }}
+            />
+          </div>
+        )}
       </div>
+
       <div className="w-full md:w-[60%] order-1 md:order-2">
-        <div className="px-5 md:px-12 py-10 md:py-20 rounded-2xl h-full flex flex-col bg-[#FCFAF6] bg-cover bg-no-repeat">
-          <div className="flex flex-col gap-3 md:gap-5 text-center md:text-left">
+        <div className="px-[5%] md:px-[8%] py-[2.5rem] md:py-[5rem] rounded-2xl h-full flex flex-col bg-[#FCFAF6] bg-cover bg-no-repeat">
+          <div className="flex flex-col gap-[0.75rem] md:gap-[1.25rem] text-center md:text-left">
             <h6 className="text-[#716952] tracking-[1.68px] text-sm md:text-lg">
               VENDORPERK AI
             </h6>
-            <h3 className="text-[28px] md:text-[56px] text-[#241C05] font-medium md:leading-[60px] leading-[36.96px] tracking-[-1.26px]">
+            <h3 className="text-[1.75rem] md:text-[3.5rem] text-[#241C05] font-medium md:leading-[3.75rem] leading-[2.31rem] tracking-[-1.26px]">
               AI-powered <br />
               <span className="text-[#BDB59E]">Plan Effortlessly</span>
             </h3>
@@ -42,11 +49,11 @@ export default function AISection() {
             width={353}
             height={403}
             layout="responsive"
-            className="flex md:hidden mt-6"
+            className="flex md:hidden mt-[1.5rem]"
             style={{ objectFit: "cover" }}
           />
-          <div className="md:flex justify-center md:justify-start hidden flex-1 h-full items-end md:items-start  pt-4 font-medium">
-            <Button className="bg-[#F0E8D1] text-[#574F38] items-center gap-3 p-[14px] w-auto h-[56px]">
+          <div className="md:flex justify-center md:justify-start hidden flex-1 h-full items-end md:items-start pt-[1rem] font-medium">
+            <Button className="bg-[#F0E8D1] text-[#574F38] items-center gap-[0.75rem] p-[0.875rem] w-auto h-[3.5rem]">
               Try AI Assistant 🚀
             </Button>
           </div>
