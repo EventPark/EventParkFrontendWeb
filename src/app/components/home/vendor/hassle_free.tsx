@@ -4,7 +4,7 @@ import Image from "next/image";
 
 const HassleFreeSection = () => {
   return (
-    <div className="md:flex-row flex-col px-5 md:px-40 gap-8 flex h-full justify-between  ">
+    <div className="md:flex-row flex-col px-5 md:px-40 gap-8 flex h-full justify-between bg-[#FAFAFA]">
       <div className="w-full md:w-[40%] max-w-3xl order-2 md:order-1">
         <Image
           src="/images/vendor/hassle.png"

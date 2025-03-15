@@ -64,7 +64,7 @@ const NavBar = () => {
       <Menu
         right
         isOpen={isMobileNavOpen}
-        className="bg-[url('/images/home/mobile_nav_bg.svg')] bg-cover bg-no-repeat top-0 "
+        className="bg-[url('/images/home/mobile_nav_bg.svg')] bg-cover bg-no-repeat top-0"
         menuClassName=" w-full"
         styles={{
           bmMenuWrap: {
@@ -75,9 +75,9 @@ const NavBar = () => {
       >
         <div
           id="page-wrap"
-          className="space-y-64 text-center px-5 py-4 flex flex-col items-center justify-between h-full "
+          className="space-y-16 text-center px-5 py-4 flex flex-col items-center justify-between h-full"
         >
-          <div className="space-y-4 text-center px-5 py-4 flex flex-col items-center justify-center">
+          <div className="space-y-2 text-center  py-4 flex flex-col items-center justify-center">
             <div
               className="mx-auto text-center flex items-center justify-end w-full"
               onClick={() => setIsMobileNavOpen(false)}
@@ -94,7 +94,7 @@ const NavBar = () => {
             </div>
             <div
               onClick={() => updateUserType("user")}
-              className={`max-w-[203px] mx-auto text-[#c099af] py-4 text-2xl font-normal block w-full ${
+              className={`max-w-[203px] mx-auto text-[#c099af] py-4 text-xl font-normal block w-full ${
                 userType == "user" &&
                 "max-w-[300px] text-[40px] font-bold text-white px-8 py-6 bg-white/10 rounded-[64px] backdrop-blur-xl justify-center items-center "
               }`}
@@ -102,13 +102,13 @@ const NavBar = () => {
               Home
             </div>
             <div
-              className={`max-w-[203px] mx-auto text-[#c099af] py-4 text-2xl font-normal block w-full`}
+              className={`max-w-[203px] mx-auto text-[#c099af] py-4 text-xl font-normal block w-full`}
             >
               Company
             </div>
             <div
               onClick={() => updateUserType("vendor")}
-              className={`max-w-[203px] mx-auto text-[#c099af] py-4 text-2xl font-normal block w-full ${
+              className={`max-w-[203px] mx-auto text-[#c099af] py-4 text-xl font-normal block w-full ${
                 userType == "vendor" &&
                 "max-w-[300px] text-[40px] font-bold text-white px-8 py-6 bg-white/10 rounded-[64px] backdrop-blur-xl justify-center items-center "
               }`}
@@ -116,7 +116,7 @@ const NavBar = () => {
               For Vendors
             </div>
             <div
-              className={`max-w-[203px] mx-auto text-[#c099af] py-4 text-2xl font-normal block w-full flex-1`}
+              className={`max-w-[203px] mx-auto text-[#c099af] py-4 text-xl font-normal block w-full flex-1`}
             >
               Marketplace
             </div>
