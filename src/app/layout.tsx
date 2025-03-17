@@ -5,7 +5,7 @@ import { ModalProvider } from "./context/ModalContext";
 import { SnackbarProvider } from "notistack";
 
 export const metadata: Metadata = {
-  title: "VendorPerk",
+  title: "EventPark",
   description:
     "Find the right vendors, create amazing events, and let us handle the rest",
 };

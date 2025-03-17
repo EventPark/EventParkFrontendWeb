@@ -6,32 +6,32 @@ import Image from "next/image";
 const testimonials = [
   {
     name: "Sophia Hamilton",
-    text: "VendorPerk made planning my wedding such an enjoyable experience! I was overwhelmed at first, but the platform's AI-powered matchmaker matched me with the perfect caterers, decorators, and even a live band.",
+    text: "EventPark made planning my wedding such an enjoyable experience! I was overwhelmed at first, but the platform's AI-powered matchmaker matched me with the perfect caterers, decorators, and even a live band.",
     rating: 5,
   },
   {
     name: "Olivia Martinez",
-    text: "As an event coordinator, I’m constantly on the lookout for reliable vendors, and VendorPerk exceeded all my expectations. AI tools matched  me with the best vendors, and reviews boosted  my confidence.",
+    text: "As an event coordinator, I’m constantly on the lookout for reliable vendors, and EventPark exceeded all my expectations. AI tools matched  me with the best vendors, and reviews boosted  my confidence.",
     rating: 4,
   },
   {
     name: "Lila Johnson",
-    text: "VendorPerk’s user-friendly interface and secure payment system made booking vendors incredibly easy. I used it to organise a baby shower for my best friend, and everything turned out perfect.",
+    text: "EventPark’s user-friendly interface and secure payment system made booking vendors incredibly easy. I used it to organise a baby shower for my best friend, and everything turned out perfect.",
     rating: 5,
   },
   {
     name: "Aaron Cooper",
-    text: "VendorPerk’s budgeting tools were a game-changer for our nonprofit's charity gala. I stayed on track financially and booked amazing vendors without any stress",
+    text: "EventPark’s budgeting tools were a game-changer for our nonprofit's charity gala. I stayed on track financially and booked amazing vendors without any stress",
     rating: 4,
   },
   {
     name: "Jason Taylor",
-    text: "I’ve planned everything from concerts to community festivals, and VendorPerk is now my go-to platform. It’s so intuitive, awide range of vendor categories ensures I always find exactly what I need.",
+    text: "I’ve planned everything from concerts to community festivals, and EventPark is now my go-to platform. It’s so intuitive, awide range of vendor categories ensures I always find exactly what I need.",
     rating: 5,
   },
   {
     name: "Ololade Johnson",
-    text: "Planning my daughter’s 10th birthday was so much fun thanks to VendorPerk. I found a magician, party decorators, and even a cake artist all in one place. I loved being able to check availability and book everything instantly.",
+    text: "Planning my daughter’s 10th birthday was so much fun thanks to EventPark. I found a magician, party decorators, and even a cake artist all in one place. I loved being able to check availability and book everything instantly.",
     rating: 5,
   },
 ];

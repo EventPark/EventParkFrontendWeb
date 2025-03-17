@@ -32,7 +32,7 @@ export default function AISection() {
         <div className="px-[5%] md:px-[8%] py-[2.5rem] md:py-[5rem] rounded-2xl h-full flex flex-col bg-[#FCFAF6] bg-cover bg-no-repeat">
           <div className="flex flex-col gap-[0.75rem] md:gap-[1.25rem] text-center md:text-left">
             <h6 className="text-[#716952] tracking-[1.68px] text-sm md:text-lg">
-              VENDORPERK AI
+              EVENTPARK AI
             </h6>
             <h3 className="text-[1.75rem] md:text-[3.5rem] text-[#241C05] font-medium md:leading-[3.75rem] leading-[2.31rem] tracking-[-1.26px]">
               AI-powered <br />
