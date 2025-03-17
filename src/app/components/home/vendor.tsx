@@ -38,25 +38,24 @@ export default function UserVendorSection() {
   }, []);
   return (
     <div
-      className="pt-[74px] pb-[91px]  bg-center bg-no-repeat   md:bg-[url('/images/home/marketplace_album.png')]"
+      className="pt-[74px] pb-[91px] bg-center bg-no-repeat "
       style={{
         backgroundSize: "cover",
         backgroundColor: "linear-gradient(180deg, #FBF8F1 0%, #F5EFDF 100%)",
       }}
     >
-      <div className="px-5 md:px-40 gap-3">
+      <div className="px-5 md:px-40 gap-3 flex flex-col justify-center items-center">
         <h6 className="text-[#A39B84] tracking-[1.68px] text-sm md:text-lg">
           EXTENSIVE VENDOR MARKETPLACE
         </h6>
-        <h3 className="flex flex-col text-[32px] md:text-[56px] tracking-[-1.44px]  md:tracking-[-2.8px] md:font-medium font-normal gap-0 leading-[132%]">
-          <span className="text-primary">Access over 13K+</span>{" "}
-          <span className="text-[#716952]">
-            {" "}
-            <span className="md:text-black">Vendors to</span> Make Your{" "}
-          </span>
-          <span className="text-[#716952] ">Event Unforgettable</span>
+        <h3 className="flex flex-col text-[32px] md:text-[56px] text-center tracking-[-1.44px] md:tracking-[-2.8px] md:font-medium font-normal gap-0 leading-[132%]">
+          <span className="text-primary">
+            Access over 13K+ <span className="md:text-black">Vendors,</span>{" "}
+          </span>{" "}
+          <span className="text-[#716952]">Create unforgettable, </span>
+          <span className="text-[#716952]">remarkable events</span>
         </h3>
-        <Button className="my-6 font-bold gap-3 text-white hover:bg-gray-200 flex items-center bg-primary">
+        <Button className="my-6 font-bold gap-3 text-white hover:bg-gray-200 flex items-center bg-primary py-3.5 px-6">
           Find Vendors
           <Image
             src="/icons/arrow-circle-right.svg"
@@ -66,8 +65,16 @@ export default function UserVendorSection() {
           />
         </Button>
       </div>
-      <div className="md:h-[540px] 2xl:h-[1024px] w-full flex items-center  justify-start curved-div overflow-hidden mt-4 h-[1024px]">
+      <div className="md:h-[540px] 2xl:h-[1024px] w-full flex items-center justify-start curved-div overflow-hidden mt-4 h-[1024px] ">
+        <Image
+          src={"/images/home/extensive.png"}
+          fill
+          alt=""
+          className="object-cover w-full h-full hidden md:block"
+          sizes="100vw"
+        />
         <>
+          {/* Mobile Carousel */}
           <div
             className="curved-div-top overflow-x-scroll no-scrollbar h-[300px] md:hidden"
             ref={carouselRef}
@@ -81,7 +88,7 @@ export default function UserVendorSection() {
               ].map(({ src, title }, index) => (
                 <motion.div
                   key={index}
-                  className="carousel-item min-w-[330px] h-[20rem] flex items-center justify-center rounded-lg "
+                  className="carousel-item min-w-[330px] h-[20rem] flex items-center justify-center rounded-lg"
                   whileHover={{ scale: 1.05 }}
                 >
                   <div className="carousel-item-p hidden">{title}</div>
@@ -94,12 +101,12 @@ export default function UserVendorSection() {
         </>
       </div>
 
-      <div className="flex flex-col items-center md:items-end px-5 md:px-40">
+      <div className="flex flex-col items-center md:items-end px-5 md:px-40 md:hidden">
         <p className="text-[#8E8E93] tracking-[-1.2px] text-2xl md:text-[32px] font-medium">
           {centerItem}
         </p>
         <p className="text-[#000] tracking-[-1.2px] text-sm md:text-lg font-medium">
-          1,440 VENDORS
+          1,440
         </p>
       </div>
     </div>

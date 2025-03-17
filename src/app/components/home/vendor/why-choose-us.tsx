@@ -1,14 +1,10 @@
-import React from "react";
-import { motion } from "framer-motion";
-import { VendorStepsCards } from "./steps";
-
 export default function WhyChooseUsSection() {
   return (
-    <div className="md:px-40 px-5 pt-20 pb-[91px]">
-      <div className="w-full md:w-[443px] text-center mb-20 text-[32px] md:text-5xl font-medium tracking-[-1.44px] md:tracking-[-2.4px] mx-auto">
+    <div className="md:px-40 px-5 pt-20 md:pb-[91px] pb-[40px]">
+      <div className="w-full md:w-[443px] text-center md:mb-20 mb-[20px] text-[32px] md:text-5xl md:font-medium tracking-[-1.44px] md:tracking-[-2.4px] mx-auto">
         Here&apos;s why vendors choose us
       </div>
-      <div className="gap-5 md:gap-7 justify-center flex mx-auto relative overflow-x-scroll transition-all duration-1200 no-scrollbar">
+      <div className="gap-5 md:gap-7 flex mx-auto relative overflow-x-scroll transition-all duration-1200 no-scrollbar pb-[46px]">
         <div className=" min-w-[350px] max-w-[358px] inline-flex h-[497px] flex-col justify-end pb-12 shadow-md rounded-lg flex-shrink-0 bg-cover bg-no-repeat bg-[url('/images/vendor/carousel/bg_one.svg')]">
           <div className="flex flex-col gap-y-4 px-6">
             <div className=" text-[28px] md:text-[32px] font-medium tracking-[-1.28px]w-[259px] ">

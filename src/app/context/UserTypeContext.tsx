@@ -2,7 +2,7 @@
 import { SnackbarProvider } from "notistack";
 import React, { createContext, useContext, useState, ReactNode } from "react";
 
-export type UserType = "user" | "vendor";
+export type UserType = "user" | "vendor" | "marketplace";
 
 interface UserTypeContextProps {
   userType: UserType;

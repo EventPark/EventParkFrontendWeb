@@ -7,22 +7,22 @@ import { Button } from "../ui";
 
 const faqs = [
   {
-    question: "What is VendorPerk?",
+    question: "What is EventPark?",
     answer:
-      "VendorPerk is an event management platform that streamlines the process of finding, booking, and managing vendors for events.",
+      "EventPark is an event management platform that streamlines the process of finding, booking, and managing vendors for events.",
   },
   {
-    question: "How do I search for vendors on VendorPerk?",
+    question: "How do I search for vendors on EventPark?",
     answer:
       "You can search for vendors by entering relevant keywords in the search bar.",
   },
   {
     question: "Can I filter vendors by budget, location, or services offered?",
     answer:
-      "Yes, VendorPerk provides filtering options to help you find vendors that match your requirements.",
+      "Yes, EventPark provides filtering options to help you find vendors that match your requirements.",
   },
   {
-    question: "How do I book a vendor through VendorPerk?",
+    question: "How do I book a vendor through EventPark?",
     answer:
       "You can book a vendor by clicking the 'Book Now' button on their profile.",
   },

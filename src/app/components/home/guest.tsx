@@ -69,7 +69,7 @@ export default function GuestSection() {
             src={
               userType == "user"
                 ? "/images/home/guest_mobile.svg"
-                : "/images/vendor/analytics_mobile.svg"
+                : "/images/vendor/analytics_mobile.png"
             }
             alt="Guest management illustration"
             fill

@@ -4,8 +4,8 @@ import Image from "next/image";
 
 const WalletSystemSection = () => {
   return (
-    <div className="md:flex-row flex-col px-5 md:px-40 gap-8 flex h-full  justify-between py-16 md:py-[114px]">
-      <div className=" w-full md:w-[60%] md:bg-[url('/images/vendor/left_wallet_system.svg')] rounded-3xl bg-no-repeat bg-cover">
+    <div className="md:flex-row flex-col px-5 md:px-40 gap-8 flex h-full justify-between py-16 md:py-[114px]">
+      <div className="relative w-full md:w-[60%] rounded-3xl md:bg-gradient-to-b from-[#FAFAFA] to-[#F0F0F0]">
         <div className="px-5  md:px-12 py-10 md:py-20 rounded-2xl h-full flex flex-col bg-cover bg-no-repeat">
           <div className="flex flex-col gap-3 md:gap-5 ">
             <h6 className="text-[#3D3D3D] tracking-[1.68px] text-sm md:text-lg">
@@ -24,6 +24,9 @@ const WalletSystemSection = () => {
               Join as a vendor
             </Button>
           </div>
+        </div>
+        <div className="absolute bottom-0 right-0 hidden md:block 2xl:w-[28rem] 2xl:h-[28rem] w-[20rem] h-[20rem]">
+          <Image src="images/vendor/wallet_vector.svg" fill alt="" />
         </div>
       </div>
 
