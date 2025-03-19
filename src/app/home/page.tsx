@@ -1,26 +1,11 @@
 "use client";
 
 import {
-  BudgetSection,
   FAQAccordion,
   Footer,
-  GiftSection,
-  GuestSection,
   HeroSection,
-  PersonalisedWebsitesSection,
   PlanAnEvent,
-  StatsSection,
-  Steps,
   TestimonialSection,
-  UserVendorSection,
-  VendorMessagingSection,
-  AISection,
-  OnlineMarketPlaceSection,
-  WhyChooseUsSection,
-  ChannelSection,
-  WalletSystemSection,
-  HassleFreeSection,
-  VendorSteps,
 } from "@/app/components";
 
 import { useUserType } from "../context/UserTypeContext";
