@@ -1,24 +1,33 @@
 import Image from "next/image";
 import React from "react";
 import StarRating from "../../ui/star-rating";
+import CategoryOption from "./category-option";
+import { categories } from "./categories";
 
 interface FilterSectionProps {
   title: string;
   children?: React.ReactNode;
+  showPadding?: boolean;
 }
 
-function FilterSection({ title, children }: FilterSectionProps) {
+function FilterSection({
+  title,
+  children,
+  showPadding = true,
+}: FilterSectionProps) {
   const [isExpanded, setIsExpanded] = React.useState(false);
 
   return (
     <div
-      className={`py-5 border-b border-gray-200 ${
+      className={`border-b border-gray-200 ${
         isExpanded ? "bg-[#00000005]" : ""
-      }`}
+      } ${showPadding ? "py-5" : ""}`}
     >
-      <div className={`px-6 flex flex-col gap-2`}>
+      <div className={`${showPadding ? "px-6" : "px-0"} flex flex-col gap-2`}>
         <div
-          className="flex justify-between items-center cursor-pointer"
+          className={`${
+            showPadding ? "px-0" : "px-6 py-5"
+          }  flex justify-between items-center cursor-pointer`}
           onClick={() => setIsExpanded(!isExpanded)}
         >
           <h3
@@ -41,10 +50,10 @@ function FilterSection({ title, children }: FilterSectionProps) {
 
         <div
           className={`transition-all duration-200 ${
-            isExpanded ? "max-h-96" : "max-h-0"
+            isExpanded ? "min-h-24" : "max-h-0"
           } overflow-hidden rounded-lg`}
         >
-          <div className="p-3">{children}</div>
+          <div className={`${showPadding ? "p-3" : "p-0"}`}>{children}</div>
         </div>
       </div>
     </div>
@@ -56,6 +65,17 @@ export default function Filters() {
   const [selectedRating, setSelectedRating] = React.useState<
     number | undefined
   >();
+  const [selectedCategories, setSelectedCategories] = React.useState<string[]>(
+    []
+  );
+
+  const toggleCategory = (value: string) => {
+    setSelectedCategories((prev) =>
+      prev.includes(value)
+        ? prev.filter((cat) => cat !== value)
+        : [...prev, value]
+    );
+  };
 
   return (
     <div
@@ -73,20 +93,24 @@ export default function Filters() {
             height={48}
             onClick={() => setIsOpen(false)}
           />
-          <FilterSection title="CATEGORY">
-            <div className="space-y-2">
-              <div className="flex items-center">
-                <input
-                  type="checkbox"
-                  id="event-planning"
-                  className="h-4 w-4 rounded border-gray-300 text-primary focus:ring-primary"
+          <FilterSection title="CATEGORY" showPadding={false}>
+            <div className="space-y-1">
+              {categories.map((category) => (
+                <CategoryOption
+                  key={category.value}
+                  {...category}
+                  isSelected={selectedCategories.includes(category.value)}
+                  onToggle={toggleCategory}
                 />
-                <label
-                  htmlFor="event-planning"
-                  className="ml-2 text-sm text-gray-600"
-                >
-                  Event Planning
-                </label>
+              ))}
+              <div className="w-full mt-2 text-sm text-black font-medium  px-6 transition-colors duration-200 flex items-center justify-start gap-3 py-4">
+                <Image
+                  src="/icons/add-circle-grey.svg"
+                  alt="view more"
+                  width={24}
+                  height={24}
+                />{" "}
+                <span className="text-base">View More</span>
               </div>
             </div>
           </FilterSection>

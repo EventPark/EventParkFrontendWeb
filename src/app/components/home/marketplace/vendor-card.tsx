@@ -1,18 +1,12 @@
 import Image from "next/image";
 import { Button } from "../../ui";
+import { Vendor } from "./types";
+import VendorNameWithLogo from "./vendor-name-with-logo";
+import Tags from "./tags";
 
 interface Tag {
   label: string;
   className?: string;
-}
-
-interface VendorCardProps {
-  name: string;
-  location: string;
-  rating: number;
-  tags: Tag[];
-  imageUrl: string;
-  logoUrl: string;
 }
 
 export default function VendorCard({
@@ -22,7 +16,7 @@ export default function VendorCard({
   tags,
   imageUrl,
   logoUrl,
-}: VendorCardProps) {
+}: Vendor) {
   return (
     <div className="relative rounded-2xl overflow-hidden group cursor-pointer group-hover:h-[26rem] h-[24rem]">
       {/* Main Image */}
@@ -35,26 +29,10 @@ export default function VendorCard({
         />
 
         {/* Logo */}
-        <div className="absolute top-4 left-4 w-[50px] h-[50px] rounded-full overflow-hidden border-2 border-white/20 bg-black/20">
-          <Image
-            src={logoUrl}
-            alt={`${name} logo`}
-            fill
-            className="object-cover"
-          />
-        </div>
+        <VendorNameWithLogo vendorName={name} vendorLogo={logoUrl} />
 
         {/* Tags */}
-        <div className="absolute bottom-8 left-2 flex gap-2 flex-wrap transition-all duration-300 group-hover:bottom-20">
-          {tags.map((tag, index) => (
-            <span
-              key={index}
-              className={`px-4 py-1.5 rounded-full text-sm font-medium bg-white/25 backdrop-blur-sm text-white ${tag.className}`}
-            >
-              {tag.label}
-            </span>
-          ))}
-        </div>
+        <Tags tags={tags} />
       </div>
 
       {/* Info Section */}
