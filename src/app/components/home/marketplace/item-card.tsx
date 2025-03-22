@@ -5,15 +5,22 @@ import StarRating from "../../ui/star-rating";
 import VendorNameWithLogo from "./vendor-name-with-logo";
 import Tags from "./tags";
 import { Button } from "../../ui";
+import { useRouter } from "next/navigation";
 
 interface ItemCardProps {
   item: Item;
 }
 
 export default function ItemCard({ item }: ItemCardProps) {
+  const router = useRouter();
+
+  const handleViewItem = () => {
+    router.push(`/marketplace/${item.id}`);
+  };
+
   return (
     <div className="relative rounded-2xl overflow-hidden group cursor-pointer group-hover:h-[26rem] h-[24rem]">
-      <div className="relative w-full h-[300px]">
+      <div className="relative w-full h-[300px]" onClick={handleViewItem}>
         <Image
           src={item.image}
           alt={item.name}
@@ -42,7 +49,10 @@ export default function ItemCard({ item }: ItemCardProps) {
 
         {/* View Profile Button */}
         <div className="flex gap-2 py-4">
-          <Button className="flex gap-2 py-2 text-xs font-medium text-white bg-primary rounded-full translate-y-8 opacity-0 transition-all group-hover:translate-y-0 group-hover:opacity-100 [transition-property:transform,opacity] items-center [transition-duration:300ms,150ms]">
+          <Button
+            onClick={handleViewItem}
+            className="flex gap-2 py-2 text-xs font-medium text-white bg-primary rounded-full translate-y-8 opacity-0 transition-all group-hover:translate-y-0 group-hover:opacity-100 [transition-property:transform,opacity] items-center [transition-duration:300ms,150ms]"
+          >
             View Item
             <Image
               src={"/icons/arrow-circle-right.svg"}

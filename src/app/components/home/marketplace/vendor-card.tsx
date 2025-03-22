@@ -3,6 +3,7 @@ import { Button } from "../../ui";
 import { Vendor } from "./types";
 import VendorNameWithLogo from "./vendor-name-with-logo";
 import Tags from "./tags";
+import Link from "next/link";
 
 interface Tag {
   label: string;
@@ -10,6 +11,7 @@ interface Tag {
 }
 
 export default function VendorCard({
+  id,
   name,
   location,
   rating,
@@ -17,8 +19,12 @@ export default function VendorCard({
   imageUrl,
   logoUrl,
 }: Vendor) {
+  
   return (
-    <div className="relative rounded-2xl overflow-hidden group cursor-pointer group-hover:h-[26rem] h-[24rem]">
+    <Link
+      href={`/marketplace/vendor/${id}`}
+      className="relative rounded-2xl overflow-hidden group cursor-pointer group-hover:h-[26rem] h-[24rem]"
+    >
       {/* Main Image */}
       <div className="relative w-full h-[300px]">
         <Image
@@ -58,6 +64,6 @@ export default function VendorCard({
           />
         </Button>
       </div>
-    </div>
+    </Link>
   );
 }

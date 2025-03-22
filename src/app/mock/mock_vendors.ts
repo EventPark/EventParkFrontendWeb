@@ -1,4 +1,4 @@
-import { Item } from "../components/home/marketplace/types";
+import { Item, Vendor } from "../components/home/marketplace/types";
 
 export const MOCK_ITEMS: Item[] = [
   {
@@ -58,8 +58,9 @@ export const MOCK_ITEMS: Item[] = [
   },
 ];
 
-export const MOCK_VENDORS = [
+export const MOCK_VENDORS: Vendor[] = [
   {
+    id: "1",
     name: "Glitz & Glam Events",
     location: "Lekki, Lagos Nigeria",
     rating: 4.5,
@@ -68,6 +69,7 @@ export const MOCK_VENDORS = [
     logoUrl: "/images/home/mock_vendor_logo.svg",
   },
   {
+    id: "2",
     name: "Perfect Touch Decor",
     location: "Lekki, Lagos Nigeria",
     rating: 4.5,
@@ -76,6 +78,7 @@ export const MOCK_VENDORS = [
     logoUrl: "/images/home/mock_vendor_logo.svg",
   },
   {
+    id: "3",
     name: "Dreamscape Planners",
     location: "Lekki, Lagos Nigeria",
     rating: 4.5,
@@ -84,6 +87,7 @@ export const MOCK_VENDORS = [
     logoUrl: "/images/home/mock_vendor_logo.svg",
   },
   {
+    id: "4",
     name: "Jollof & Beyond",
     location: "Lekki, Lagos Nigeria",
     rating: 4.5,
@@ -92,6 +96,7 @@ export const MOCK_VENDORS = [
     logoUrl: "/images/home/mock_vendor_logo.svg",
   },
   {
+    id: "5",
     name: "Tasty Treats NG",
     location: "Lekki, Lagos Nigeria",
     rating: 4.5,
@@ -100,6 +105,7 @@ export const MOCK_VENDORS = [
     logoUrl: "/images/home/mock_vendor_logo.svg",
   },
   {
+    id: "6",
     name: "Naija Bites Catering",
     location: "Lekki, Lagos Nigeria",
     rating: 4.5,
@@ -108,6 +114,7 @@ export const MOCK_VENDORS = [
     logoUrl: "/images/home/mock_vendor_logo.svg",
   },
   {
+    id: "7",
     name: "Lens Master Studios",
     location: "Lekki, Lagos Nigeria",
     rating: 4.5,
@@ -116,6 +123,7 @@ export const MOCK_VENDORS = [
     logoUrl: "/images/home/mock_vendor_logo.svg",
   },
   {
+    id: "8",
     name: "Golden Frame Visuals",
     location: "Lekki, Lagos Nigeria",
     rating: 4.5,
@@ -124,6 +132,7 @@ export const MOCK_VENDORS = [
     logoUrl: "/images/home/mock_vendor_logo.svg",
   },
   {
+    id: "9",
     name: "Bella Wears NG",
     location: "Lekki, Lagos Nigeria",
     rating: 4.5,

@@ -17,6 +17,7 @@ interface Tag {
 }
 
 export interface Vendor {
+  id: string;
   name: string;
   location: string;
   rating: number;
