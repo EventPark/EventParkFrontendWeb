@@ -1,0 +1,33 @@
+name: Deploy Dev
+
+on:
+  workflow_dispatch:
+
+jobs:
+  deploy:
+    name: Deploying Dev Server
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v2
+
+      - name: Configure AWS Credentials
+        uses: aws-actions/configure-aws-credentials@v2
+        with:
+          aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
+          aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+          aws-region: ${{ secrets.AWS_REGION }}
+
+      - name: Log in to Amazon ECR
+        run: |
+          aws ecr get-login-password --region ${{ secrets.AWS_REGION }} | docker login --username AWS --password-stdin ${{ secrets.AWS_ECR_URL }}
+
+      - name: Build, Tag, and Push Docker Image
+        run: |
+          docker buildx create --use
+          docker buildx build --platform linux/amd64,linux/arm64 -f ./server.Dockerfile -t ${{ secrets.AWS_ECR_URL }}/${{ secrets.AWS_DEV_ECR_REPO }}:latest --push .
+
+      - name: Update ECS Service
+        run: |
+          aws ecs update-service --cluster ${{ secrets.AWS_DEV_ECS_CLUSTER }} --service ${{ secrets.AWS_DEV_ECS_SERVICE }} --force-new-deployment
