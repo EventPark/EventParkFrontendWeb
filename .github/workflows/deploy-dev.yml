@@ -23,21 +23,12 @@ jobs:
         run: |
           aws ecr get-login-password --region ${{ secrets.AWS_REGION }} | docker login --username AWS --password-stdin ${{ secrets.AWS_ECR_URL }}
 
-      - name: Download build env file from S3
-        run: |
-            aws s3 cp ${{ secrets.AWS_DEV_BUILD_ENV_FILE }} .env
-      
-      - name: Export Environment Variables
-        run: |
-          export $(grep -v '^#' .env | xargs)
-
       - name: Build, Tag, and Push Docker Image
         run: |
           docker buildx create --use
           docker buildx build --platform linux/amd64,linux/arm64 \
             -f ./server.Dockerfile \
             --push \
-            --build-arg NEXT_PUBLIC_API_URL=$NEXT_PUBLIC_API_URL \
             -t ${{ secrets.AWS_ECR_URL }}/${{ secrets.AWS_DEV_ECR_REPO }}:latest .
 
       - name: Update ECS Service
