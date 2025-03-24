@@ -10,6 +10,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { useSnackbar } from "notistack";
 import { useEffect, useState } from "react";
+import { addToWaitlist } from "@/app/actions";
 
 export default function WaitlistModal({ onClose }: WaitlistModalProps) {
   const { enqueueSnackbar } = useSnackbar();
@@ -28,47 +29,26 @@ export default function WaitlistModal({ onClose }: WaitlistModalProps) {
     e.preventDefault();
 
     if (!formData.first_name || !formData.last_name || !formData.email) {
-      enqueueSnackbar("All fields are required", {
-        variant: "warning",
-      });
+      enqueueSnackbar("All fields are required", { variant: "warning" });
       return;
     }
-
     enqueueSnackbar("Adding you to the Vendorperk waitlist...", {
       variant: "info",
     });
-
     setSubmittingForm(true);
-    try {
-      const response = await axios.post(
-        `${process.env.NEXT_PUBLIC_API_URL}/v1/waitlist`,
-        formData,
-        {
-          headers: {
-            accept: "application/json",
-            "Content-Type": "application/json",
-          },
-        }
-      );
+    const result = await addToWaitlist(formData);
+
+    if (result.success) {
+      setSubmittingForm(false);
       enqueueSnackbar("You have been successfully added to waitlist", {
         variant: "success",
       });
+
       setIsWaitlistRequestAccepted(true);
-    } catch (error) {
-      enqueueSnackbar("Something went wrong, try again later", {
-        variant: "error",
-      });
-      console.error(error);
-    } finally {
-      setSubmittingForm(false);
+    } else {
+      enqueueSnackbar(result.error, { variant: "error" });
     }
   };
-
-  useEffect(() => {
-    console.log(
-      `${process.env.NEXT_PUBLIC_API_URL}${process.env.NEXT_PUBLIC_WAITLIST_URL}`
-    );
-  }, []);
 
   return (
     <div
@@ -107,7 +87,7 @@ export default function WaitlistModal({ onClose }: WaitlistModalProps) {
 
           {isWaitlistRequestAccepted ? (
             <>
-              <div className="flex  mt-4 items-center justify-center">
+              <div className="flex mt-4 items-center justify-center">
                 <Image
                   src={"/icons/waitlist-accepted.png"}
                   width={120}
@@ -128,9 +108,7 @@ export default function WaitlistModal({ onClose }: WaitlistModalProps) {
               <div className="flex gap-2 justify-center mt-4">
                 <Image alt="" src={"/icons/fb.svg"} width={36} height={36} />
                 <Link
-                  href={
-                    "https://www.instagram.com/vendorperk?igsh=cHE4OXNvdXRocmhz"
-                  }
+                  href={`${process.env.NEXT_PUBLIC_INSTAGRAM_URL}`}
                   target="_blank"
                 >
                   <Image
@@ -147,7 +125,7 @@ export default function WaitlistModal({ onClose }: WaitlistModalProps) {
                   height={36}
                 />
                 <Link
-                  href={"https://www.linkedin.com/company/vendorperk/"}
+                  href={`${process.env.NEXT_PUBLIC_LINKEDIN_URL}`}
                   target="_blank"
                 >
                   <Image
@@ -157,7 +135,9 @@ export default function WaitlistModal({ onClose }: WaitlistModalProps) {
                     height={36}
                   />
                 </Link>
-                <Image alt="" src={"/icons/x.svg"} width={36} height={36} />
+                <Link href={`${process.env.NEXT_PUBLIC_X_URL}`} target="_blank">
+                  <Image alt="" src={"/icons/x.svg"} width={36} height={36} />
+                </Link>
               </div>
               <div className="mb-10" />
             </>
@@ -169,12 +149,7 @@ export default function WaitlistModal({ onClose }: WaitlistModalProps) {
               <h1 className="text-[32px] font-bold text-primary tracking-[-0.96px]">
                 Join the Waitlist
               </h1>
-              <form
-                onSubmit={(e) => {
-                  handleSubmit(e);
-                }}
-                className="mt-4 space-y-4"
-              >
+              <form onSubmit={handleSubmit} className="mt-4 space-y-4">
                 <div className="flex space-x-2">
                   <div className="w-1/2 space-y-12">
                     <label htmlFor="first_name" className="text-sm">
@@ -243,13 +218,13 @@ export default function WaitlistModal({ onClose }: WaitlistModalProps) {
                   </select>
                 </div>
                 <button
+                  disabled={submittingForm}
                   type="submit"
                   className={`p-2 rounded-[64px] px-5 py-3 flex items-center justify-center ${
                     userType === "user"
                       ? "bg-primary text-white "
                       : "bg-[#f0e8d1] text-black"
                   }`}
-                  disabled={submittingForm}
                 >
                   Be the first to know! 👌
                 </button>
@@ -258,7 +233,6 @@ export default function WaitlistModal({ onClose }: WaitlistModalProps) {
             </>
           )}
         </div>
-        {/* )} */}
       </div>
     </div>
   );

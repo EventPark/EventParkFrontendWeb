@@ -36,8 +36,8 @@ export default function HeroNavigation() {
   ];
 
   return (
-    <div className="fixed bottom-12 w-full justify-center hidden md:flex">
-      <nav className="top-0 px-6 py-4 rounded-full flex gap-4 bg-black/30 backdrop-blur-lg">
+    <div className=" bottom-12 w-full justify-center hidden md:flex">
+      <nav className="top-0 px-6 py-4 rounded-full flex gap-4 ">
         {navItems.map((item, index) => (
           <div
             key={item.label}
