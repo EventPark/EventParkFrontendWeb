@@ -71,7 +71,6 @@ body {
   right: 0.75em; /* Position the arrow inside the select */
   width: 1.5em;
   height: 1.5em;
-  background: url("../../public/icons/chevron-down.svg") no-repeat center center;
   background-size: contain;
   pointer-events: none; /* Prevent the arrow from blocking clicks */
 }
