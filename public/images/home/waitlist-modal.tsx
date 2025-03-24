@@ -41,7 +41,6 @@ export default function WaitlistModal({ onClose }: WaitlistModalProps) {
     setSubmittingForm(true);
     try {
       const response = await axios.post(
-        // `https://dev-api.vendorperk.com/v1/waitlist`,
         `${process.env.NEXT_PUBLIC_API_URL}/v1/waitlist`,
         formData,
         {

@@ -19,7 +19,7 @@ export default function VendorHeader({ vendor }: VendorHeaderProps) {
         {/* Cover Image */}
         <div className="relative h-[20rem] w-full bg-slate-700 ">
           {/* <Image
-          src={vendor.imageUrl}
+          src={vendor.imageUrl}∆
           alt={`${vendor.name} cover`}
           fill
           className="object-cover"
