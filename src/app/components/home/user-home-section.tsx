@@ -15,7 +15,7 @@ import UserVendorSection from "./vendor";
 
 export default function UserHomeSection() {
   return (
-    <div className="w-full">
+    <div className="w-full md:space-y-12 space-y-8">
       <UserVendorSection />
       <BudgetSection />
       <GuestSection />

@@ -88,7 +88,7 @@ export default function Steps() {
 
   return (
     <div>
-      <div className="px-5 md:px-40 md:pt-24">
+      <div className="px-5 md:px-40 md:pt-24 mb-12">
         <div className="flex items-center justify-between">
           <h2 className="md:text-[56px] text-[32px] font-medium tracking-[-1.4px] md:tracking-[-2.4px]">
             Plan your big event <br />
@@ -98,14 +98,15 @@ export default function Steps() {
             Find Vendors Nearby
           </Button>
         </div>
-        <div className="hidden rounded-3xl md:flex flex-col items-start md:flex-row md:gap-6 mt-12 p-3 bg-[#FBF9FA]">
+
+        <div className="overflow-hidden hidden rounded-3xl md:flex flex-col items-start md:flex-row md:gap-6 mt-12 bg-[#FBF9FA] h-full">
           {/* Left Side - Text Content */}
-          <div className="md:w-1/2 space-y-6">
+          <div className="md:w-[40%] p-3 h-full">
             {vendorFeatures?.map((vendorFeature, index) => (
               <div
                 onClick={() => setSelectedVendorFeature(vendorFeature)}
                 key={index}
-                className={`cursor-pointer p-6  rounded-xl flex gap-2 flex-col ${
+                className={`cursor-pointer p-6 rounded-xl flex gap-2 flex-col ${
                   selectedVendorFeature.heading === vendorFeature?.heading
                     ? "bg-white shadow-md "
                     : ""
@@ -126,7 +127,7 @@ export default function Steps() {
               </div>
             ))}
           </div>
-          <div className="md:w-1/2">
+          <div className="md:w-[60%] h-full rounded-tr-3xl rounded-br-3xl">
             <Suspense fallback={<div>Loading...</div>}>
               <Lottie
                 animationData={selectedVendorFeature.lottiePath}
