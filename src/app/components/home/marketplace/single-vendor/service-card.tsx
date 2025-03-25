@@ -9,8 +9,8 @@ interface ServiceCardProps {
 
 export default function ServiceCard({ service }: ServiceCardProps) {
   return (
-    <div className="bg-white rounded-2xl overflow-hidden">
-      <div className="relative h-[240px]">
+    <div className="bg-white rounded-2xl overflow-hidden flex w-auto border border-grey-lightest">
+      <div className="relative h-[15rem] w-[10rem]">
         <Image
           src={service.image}
           alt={service.title}
@@ -18,47 +18,36 @@ export default function ServiceCard({ service }: ServiceCardProps) {
           className="object-cover"
         />
       </div>
-      <div className="p-6">
+      <div className="p-6 px-4">
         <div className="flex justify-between items-start mb-2">
           <div>
             <h3 className="text-lg font-medium text-gray-900">
               {service.title}
             </h3>
-            <p className="text-sm text-gray-500">{service.description}</p>
-          </div>
-          <div className="flex items-center gap-1 bg-[#F2F2F7] px-3 py-1.5 rounded-full">
-            <Image
-              src="/icons/star_rating.svg"
-              alt="rating"
-              width={16}
-              height={16}
-            />
-            <span className="text-sm font-medium">
-              {service.rating} ({service.reviewCount})
-            </span>
+            <p className="text-sm text-grey-border">{service.description}</p>
           </div>
         </div>
 
-        <div className="flex justify-between items-center mt-4">
-          <div className="text-lg font-semibold">
-            {typeof service.price === "number" ? (
-              <>₦{service.price.toLocaleString()}</>
-            ) : (
-              <>
-                ₦{service.price.min.toLocaleString()} - ₦
-                {service.price.max.toLocaleString()}
-              </>
-            )}
+        <div className="flex flex-col justify-between items-start mt-4 p-0 gap-7">
+          <div className="px-2.5 py-1.5 bg-violet-50 rounded-2xl inline-flex justify-center items-center gap-1">
+            <Image
+              src="/icons/tag.svg"
+              alt="arrow-left"
+              width={12}
+              height={12}
+            />
+
+            <div className="text-center justify-start text-violet-700 text-xs font-medium leading-tight">
+              ₦{service.price.toLocaleString()}
+            </div>
           </div>
-          <div className="flex gap-2">
-            <Button className="px-6 py-2 text-sm">Request to Book</Button>
-            <Button className="p-2 border border-gray-200 bg-transparent">
-              <Image
-                src="/icons/add-to-registry.svg"
-                alt="Add to Registry"
-                width={20}
-                height={20}
-              />
+
+          <div className="flex gap-2 text-xs">
+            <Button className="shadow-none text-primary bg-primary-lightest py-2 px-[14px]">
+              Request Booking
+            </Button>
+            <Button className="shadow-none border border-grey-lightest py-2 px-[14px]">
+              View Service
             </Button>
           </div>
         </div>

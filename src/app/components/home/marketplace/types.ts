@@ -16,6 +16,29 @@ interface Tag {
   className?: string;
 }
 
+export interface Service {
+  id: string;
+  name: string;
+  description: string;
+}
+
+export interface VendorService {
+  id: string;
+  title: string;
+  description: string;
+  price:
+    | {
+        min: number;
+        max: number;
+      }
+    | number;
+  rating: number;
+  reviewCount: number;
+  image: string;
+}
+
+export type VendorTab = "Services" | "Portfolio" | "Reviews";
+
 export interface Vendor {
   id: string;
   name: string;
@@ -24,4 +47,5 @@ export interface Vendor {
   tags: Tag[];
   imageUrl: string;
   logoUrl: string;
+  services?: VendorService[];
 }

@@ -20,7 +20,7 @@ export default function WhyChooseUsSection() {
         </div>
         <div className=" min-w-[350px] max-w-[358px] inline-flex h-[497px] flex-col justify-end pb-12 shadow-md rounded-lg flex-shrink-0 bg-cover bg-no-repeat bg-[url('/images/vendor/carousel/bg_two.svg')]">
           <div className="flex flex-col gap-y-4 px-6">
-            <div className="w-[259px] text-[#f2f2f7] text-[28px] md:text-[32px] font-medium tracking-[-1.28px]">
+            <div className="w-[259px] text-grey-background text-[28px] md:text-[32px] font-medium tracking-[-1.28px]">
               Superior Online Presence Boost That Attracts Customers With Ease
             </div>
             <div className="text-[#d0b2c3] text-lg font-medium w-[259px]">

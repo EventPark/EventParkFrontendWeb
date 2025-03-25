@@ -1,8 +1,10 @@
-import React from "react";
-import Image from "next/image";
+"use client";
 
+import { useState } from "react";
+import Image from "next/image";
 import Link from "next/link";
-import { Button } from "../../../ui";
+import Button from "@/app/components/ui/button";
+import Calendar from "@/app/components/ui/calendar";
 import { Vendor } from "../types";
 
 interface VendorHeaderProps {
@@ -10,12 +12,33 @@ interface VendorHeaderProps {
 }
 
 export default function VendorHeader({ vendor }: VendorHeaderProps) {
-  console.log(vendor);
-  return (
-    <div className="relative w-[25.25rem] flex flex-col">
-      {/* Back Button */}
+  const [showCalendar, setShowCalendar] = useState(false);
+  const [selectedDate, setSelectedDate] = useState<Date | null>(null);
 
-      <div className="relative h-[23rem] o-red">
+  const handleDateSelect = (date: Date) => {
+    setSelectedDate(date);
+    setShowCalendar(false);
+    // Here you can handle the selected date, e.g., open booking modal
+  };
+
+  return (
+    <div className="relative w-[25.25rem] h-[1024px] flex flex-col border-r border-gray-200 ">
+      {/* Back Button */}
+      <Link
+        href="/marketplace"
+        className="absolute flex items-center gap-2 top-4 left-4 z-10 bg-white/80 backdrop-blur-sm p-2 pr-4 rounded-full text-base hover:bg-white transition-colors"
+      >
+        <Image
+          src="/icons/arrow-circle-left.svg"
+          alt="Back"
+          width={24}
+          height={24}
+          className="w-6 h-6"
+        />
+        Back
+      </Link>
+
+      <div className="relative h-[23rem]">
         {/* Cover Image */}
         <div className="relative h-[20rem] w-full bg-slate-700 ">
           {/* <Image
@@ -45,51 +68,46 @@ export default function VendorHeader({ vendor }: VendorHeaderProps) {
           />
         </div>
       </div>
-
-      <div className="px-6 py-4 gap-1.5">
-        <h1 className="text-2xl font-medium">{vendor.name}</h1>
-        <span className="text-base ">{vendor.location}</span>
-        <div className="pt-[26px]">
-          <Button>Request Booking</Button>
-        </div>
-      </div>
-
-      {/* Profile Section */}
-      <div className=" hidden relative px-40 pb-6 ">
-        <div className="flex items-end gap-6 -mt-16 relative z-10">
-          {/* Profile Image */}
-
-          {/* Vendor Info */}
-          <div className="flex-1 flex justify-between items-end pb-2">
-            <div>
-              <h1 className="text-2xl font-semibold text-gray-900">
-                {vendor.name}
-              </h1>
-              <div className="flex items-center gap-4 mt-1">
-                <div className="flex items-center gap-1">
-                  <Image
-                    src="/icons/star_rating.svg"
-                    alt="rating"
-                    width={16}
-                    height={16}
-                  />
-                  <span className="text-sm font-medium">{vendor.rating}</span>
-                </div>
-                <span className="text-gray-500">•</span>
-                <div className="flex items-center gap-1 text-gray-500">
-                  <Image
-                    src="/icons/location.svg"
-                    alt="location"
-                    width={16}
-                    height={16}
-                  />
-                  <span className="text-sm">{vendor.location}</span>
-                </div>
+      <div>
+        <div className="px-6 py-4 gap-1.5">
+          <h1 className="text-2xl font-medium">{vendor.name}</h1>
+          <span className="text-base text-gray-500 ">{vendor.location}</span>
+          <div className="pt-[26px]">
+            <div className="flex">
+              <Button className="text-primary bg-primary-lightest">
+                Request Booking
+              </Button>
+              <div className="flex flex-1 justify-end gap-2">
+                <Image
+                  src={"/icons/circle-heart.svg"}
+                  alt="phone"
+                  width={44}
+                  height={44}
+                />{" "}
+                <Image
+                  src={"/icons/circle-ellipsis-big.svg"}
+                  alt="phone"
+                  width={44}
+                  height={44}
+                />
               </div>
             </div>
           </div>
         </div>
+        <div className="h-[1px] bg-primary-lightest w-full my-4"></div>
+        <div className="px-6 py-4 gap-2 flex flex-col text-gray-500">
+          <h3 className=" uppercase text-sm tracking-widest">
+            ABOUT {vendor.name}
+          </h3>
+          <p className="text-base leading-relaxed">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Placeat
+            dolores.
+          </p>
+        </div>
+        <Calendar onDateSelect={handleDateSelect} />
       </div>
+
+      {/* Calendar Popup */}
     </div>
   );
 }

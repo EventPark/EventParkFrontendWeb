@@ -19,7 +19,6 @@ export default function VendorCard({
   imageUrl,
   logoUrl,
 }: Vendor) {
-  
   return (
     <Link
       href={`/marketplace/vendor/${id}`}
@@ -48,7 +47,7 @@ export default function VendorCard({
             <h3 className="text-lg font-medium text-black">{name}</h3>
             <p className="text-sm text-gray-500">{location}</p>
           </div>
-          <div className="flex items-center gap-1 bg-[#F2F2F7] p-2 px-2 pr-3 rounded-3xl justify-center">
+          <div className="flex items-center gap-1 bg-grey-background p-2 px-2 pr-3 rounded-3xl justify-center">
             <span className="text-sm font-medium">⭐ {rating}</span>
           </div>
         </div>

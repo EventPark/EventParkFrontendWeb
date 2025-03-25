@@ -16,46 +16,37 @@ export default function SingleVendorPage({ vendor }: SingleVendorPageProps) {
   const [activeTab, setActiveTab] = React.useState<VendorTab>("Services");
 
   return (
-    <div className="min-h-screen bg-[#ffffff flex] flex">
-      <div>
-        {/* <div>
-          <Image
-            src="/icons/arrow-circle-left.svg"
-            alt="Back"
-            width={20}
-            height={20}s
-          />
-          <div className="justify-start text-black text-sm font-semibold leading-tight">
-            Back
-          </div>
-        </div> */}
-        <VendorHeader vendor={vendor} />
+    <div className="min-h-screen bg-[#ffffff] flex">
+      <VendorHeader vendor={vendor} />
+
+      <div className="flex flex-col p-16">
+        <div className="">
+          <VendorTabs activeTab={activeTab} onTabChange={setActiveTab} />
+        </div>
+        <div className="py-8">
+          {activeTab === "Services" && (
+            <>
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                {vendor?.services?.map((service) => (
+                  <ServiceCard key={service.id} service={service} />
+                ))}
+              </div>
+            </>
+          )}
+
+          {activeTab === "Portfolio" && (
+            <div className="text-center text-gray-500 py-12">
+              Portfolio content coming soon...
+            </div>
+          )}
+
+          {activeTab === "Reviews" && (
+            <div className="text-center text-gray-500 py-12">
+              Reviews content coming soon...
+            </div>
+          )}
+        </div>
       </div>
-
-      {/*
-      <VendorTabs activeTab={activeTab} onTabChange={setActiveTab} />
-
-      <div className="px-40 py-8">
-        {activeTab === "Services" && (
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-            {vendor.services.map((service) => (
-              <ServiceCard key={service.id} service={service} />
-            ))}
-          </div>
-        )}
-
-        {activeTab === "Portfolio" && (
-          <div className="text-center text-gray-500 py-12">
-            Portfolio content coming soon...
-          </div>
-        )}
-
-        {activeTab === "Reviews" && (
-          <div className="text-center text-gray-500 py-12">
-            Reviews content coming soon...
-          </div>
-        )}
-      </div> */}
     </div>
   );
 }

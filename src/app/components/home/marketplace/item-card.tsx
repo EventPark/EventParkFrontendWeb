@@ -42,7 +42,7 @@ export default function ItemCard({ item }: ItemCardProps) {
               ₦{item.price.toLocaleString()}.00
             </p>
           </div>
-          <div className="flex items-center gap-1 bg-[#F2F2F7] p-2 px-2 pr-3 rounded-3xl justify-center">
+          <div className="flex items-center gap-1 bg-grey-background p-2 px-2 pr-3 rounded-3xl justify-center">
             <span className="text-sm font-medium">⭐ {item.rating}</span>
           </div>
         </div>

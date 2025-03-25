@@ -13,7 +13,7 @@ export default function VendorPage({ params }: VendorPageProps) {
   const vendor = MOCK_VENDORS.find((v) => v.id === params.id);
 
   if (!vendor) {
-    notFound();
+    return <div>Vendor not found</div>;
   }
 
   return <SingleVendorPage vendor={vendor} />;

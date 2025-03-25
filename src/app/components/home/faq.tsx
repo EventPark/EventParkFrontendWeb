@@ -91,7 +91,7 @@ const FAQAccordion = () => {
                 animate={{ opacity: 1, height: "auto" }}
                 exit={{ opacity: 0, height: 0 }}
                 transition={{ duration: 0 }}
-                className="text-[#31312F] mx-auto text-sm md:text-[18px] mt-2 border rounded-lg border-[#EFE5EB] bg-[#FBF9FA] px-6 py-8 leading-normal  "
+                className="text-[#31312F] mx-auto text-sm md:text-[18px] mt-2 border rounded-lg border-primary-lightest bg-[#FBF9FA] px-6 py-8 leading-normal  "
               >
                 <div className=" w-full md:w-[600px] ">{faq.answer}</div>
               </motion.div>

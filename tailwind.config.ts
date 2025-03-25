@@ -14,6 +14,13 @@ const config: Config = {
           DEFAULT: "#610037",
           light: "#B0809B",
           lighter: "#C099AF",
+          lightest: "#efe5eb",
+        },
+        grey: {
+          DEFAULT: "#666666",
+          light: "#FAF9FB",
+          background: "#F2F2F7",
+          border: "#808080",
         },
       },
       letterSpacing: {

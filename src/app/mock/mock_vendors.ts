@@ -67,6 +67,35 @@ export const MOCK_VENDORS: Vendor[] = [
     tags: [{ label: "Makeup" }, { label: "Nail Fixing" }],
     imageUrl: "/images/home/carousel/02.png",
     logoUrl: "/images/home/mock_vendor_logo.svg",
+    services: [
+      {
+        id: "1",
+        title: "Catering",
+        description: "Catering services",
+        price: 15000.0,
+        rating: 4.5,
+        reviewCount: 100,
+        image: "/images/home/carousel/02.png",
+      },
+      {
+        id: "1",
+        title: "Facial Makeups",
+        description: "Flawless makeup for your big day.",
+        price: 15000.0,
+        rating: 4.5,
+        reviewCount: 100,
+        image: "/images/home/carousel/02.png",
+      },
+      {
+        id: "1",
+        title: "Facial Makeups",
+        description: "Flawless makeup for your big day.",
+        price: 15000.0,
+        rating: 4.5,
+        reviewCount: 100,
+        image: "/images/home/carousel/02.png",
+      },
+    ],
   },
   {
     id: "2",
@@ -76,6 +105,17 @@ export const MOCK_VENDORS: Vendor[] = [
     tags: [{ label: "Event Planning" }, { label: "Decoration" }],
     imageUrl: "/images/home/carousel/02.png",
     logoUrl: "/images/home/mock_vendor_logo.svg",
+    services: [
+      {
+        id: "1",
+        title: "Catering",
+        description: "Catering services",
+        price: 15000.0,
+        rating: 4.5,
+        reviewCount: 100,
+        image: "/images/home/carousel/02.png",
+      },
+    ],
   },
   {
     id: "3",
@@ -85,6 +125,17 @@ export const MOCK_VENDORS: Vendor[] = [
     tags: [{ label: "Event Planning" }, { label: "Decoration" }],
     imageUrl: "/images/home/carousel/02.png",
     logoUrl: "/images/home/mock_vendor_logo.svg",
+    services: [
+      {
+        id: "1",
+        title: "Catering",
+        description: "Catering services",
+        price: 15000.0,
+        rating: 4.5,
+        reviewCount: 100,
+        image: "/images/home/carousel/02.png",
+      },
+    ],
   },
   {
     id: "4",
@@ -94,6 +145,17 @@ export const MOCK_VENDORS: Vendor[] = [
     tags: [{ label: "Food" }, { label: "Catering" }],
     imageUrl: "/images/home/carousel/02.png",
     logoUrl: "/images/home/mock_vendor_logo.svg",
+    services: [
+      {
+        id: "1",
+        title: "Catering",
+        description: "Catering services",
+        price: 15000.0,
+        rating: 4.5,
+        reviewCount: 100,
+        image: "/images/home/carousel/02.png",
+      },
+    ],
   },
   {
     id: "5",
@@ -103,6 +165,17 @@ export const MOCK_VENDORS: Vendor[] = [
     tags: [{ label: "Snack" }, { label: "Drinks" }],
     imageUrl: "/images/home/carousel/02.png",
     logoUrl: "/images/home/mock_vendor_logo.svg",
+    services: [
+      {
+        id: "1",
+        title: "Catering",
+        description: "Catering services",
+        price: 15000.0,
+        rating: 4.5,
+        reviewCount: 100,
+        image: "/images/home/carousel/02.png",
+      },
+    ],
   },
   {
     id: "6",
@@ -112,6 +185,17 @@ export const MOCK_VENDORS: Vendor[] = [
     tags: [{ label: "Pastries" }, { label: "Catering" }],
     imageUrl: "/images/home/carousel/02.png",
     logoUrl: "/images/home/mock_vendor_logo.svg",
+    services: [
+      {
+        id: "1",
+        title: "Catering",
+        description: "Catering services",
+        price: 15000.0,
+        rating: 4.5,
+        reviewCount: 100,
+        image: "/images/home/carousel/02.png",
+      },
+    ],
   },
   {
     id: "7",
@@ -121,6 +205,17 @@ export const MOCK_VENDORS: Vendor[] = [
     tags: [{ label: "Pictures" }, { label: "Photography" }],
     imageUrl: "/images/home/carousel/02.png",
     logoUrl: "/images/home/mock_vendor_logo.svg",
+    services: [
+      {
+        id: "1",
+        title: "Catering",
+        description: "Catering services",
+        price: 15000.0,
+        rating: 4.5,
+        reviewCount: 100,
+        image: "/images/home/carousel/02.png",
+      },
+    ],
   },
   {
     id: "8",
@@ -130,6 +225,17 @@ export const MOCK_VENDORS: Vendor[] = [
     tags: [{ label: "Photography" }, { label: "Videography" }],
     imageUrl: "/images/home/carousel/02.png",
     logoUrl: "/images/home/mock_vendor_logo.svg",
+    services: [
+      {
+        id: "1",
+        title: "Catering",
+        description: "Catering services",
+        price: 15000.0,
+        rating: 4.5,
+        reviewCount: 100,
+        image: "/images/home/carousel/02.png",
+      },
+    ],
   },
   {
     id: "9",
@@ -139,5 +245,16 @@ export const MOCK_VENDORS: Vendor[] = [
     tags: [{ label: "Fashion" }, { label: "Shoes" }],
     imageUrl: "/images/home/carousel/02.png",
     logoUrl: "/images/home/mock_vendor_logo.svg",
+    services: [
+      {
+        id: "1",
+        title: "Catering",
+        description: "Catering services",
+        price: 15000.0,
+        rating: 4.5,
+        reviewCount: 100,
+        image: "/images/home/carousel/02.png",
+      },
+    ],
   },
 ];
