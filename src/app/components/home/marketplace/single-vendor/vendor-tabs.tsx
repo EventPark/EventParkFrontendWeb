@@ -10,7 +10,7 @@ export default function VendorTabs({
   activeTab,
   onTabChange,
 }: VendorTabsProps) {
-  const tabs: VendorTab[] = ["Services", "Portfolio", "Reviews"];
+  const tabs: VendorTab[] = ["Services", "Products", "Portfolio", "Reviews"];
 
   return (
     <div className="inline-flex px-2 border-b py-1.5 border-gray-200 bg-grey-background h-[3rem] rounded-full">

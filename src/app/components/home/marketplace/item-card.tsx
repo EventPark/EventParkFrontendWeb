@@ -9,9 +9,10 @@ import { useRouter } from "next/navigation";
 
 interface ItemCardProps {
   item: Item;
+  isVendorItem?: boolean;
 }
 
-export default function ItemCard({ item }: ItemCardProps) {
+export default function ItemCard({ item, isVendorItem }: ItemCardProps) {
   const router = useRouter();
 
   const handleViewItem = () => {
@@ -19,8 +20,17 @@ export default function ItemCard({ item }: ItemCardProps) {
   };
 
   return (
-    <div className="relative rounded-2xl overflow-hidden group cursor-pointer group-hover:h-[26rem] h-[24rem]">
-      <div className="relative w-full h-[300px]" onClick={handleViewItem}>
+    <div
+      className={`relative rounded-2xl overflow-hidden group cursor-pointer ${
+        isVendorItem ? "group-hover:h-[28rem]" : "group-hover:h-[26rem]"
+      }  h-[24rem]`}
+    >
+      <div
+        className={`relative w-full ${
+          isVendorItem ? "h-[16rem]" : "h-[18.75rem]"
+        }`}
+        onClick={handleViewItem}
+      >
         <Image
           src={item.image}
           alt={item.name}
@@ -34,11 +44,23 @@ export default function ItemCard({ item }: ItemCardProps) {
         <Tags tags={item.categories.map((category) => ({ label: category }))} />
       </div>
 
-      <div className="p-4 pb-8 bg-white rounded-2xl relative -mt-2.5 transition-transform duration-300 group-hover:-translate-y-12">
+      <div
+        className={`p-4 pb-8 bg-white rounded-2xl relative transition-transform duration-300 group-hover:-translate-y-12`}
+      >
         <div className="flex justify-between items-start">
           <div>
-            <h3 className="text-lg font-medium text-black">{item.name}</h3>
-            <p className="text-sm text-gray-500">
+            <h3
+              className={`${
+                isVendorItem ? "text-base" : "text-lg"
+              } font-medium text-black`}
+            >
+              {item.name}
+            </h3>
+            <p
+              className={`${
+                isVendorItem ? "text-xs" : "text-sm"
+              } text-gray-500`}
+            >
               ₦{item.price.toLocaleString()}.00
             </p>
           </div>
@@ -48,10 +70,12 @@ export default function ItemCard({ item }: ItemCardProps) {
         </div>
 
         {/* View Profile Button */}
-        <div className="flex gap-2 py-4">
+        <div className={`${isVendorItem && "flex-col"} mt-3 flex gap-2 py-4"`}>
           <Button
             onClick={handleViewItem}
-            className="flex gap-2 py-2 text-xs font-medium text-white bg-primary rounded-full translate-y-8 opacity-0 transition-all group-hover:translate-y-0 group-hover:opacity-100 [transition-property:transform,opacity] items-center [transition-duration:300ms,150ms]"
+            className={`${
+              isVendorItem && "justify-center items-center"
+            } flex gap-2 py-2 text-xs font-medium text-white bg-primary rounded-full translate-y-8 opacity-0 transition-all group-hover:translate-y-0 group-hover:opacity-100 [transition-property:transform,opacity] items-center [transition-duration:300ms,150ms]`}
           >
             View Item
             <Image
@@ -61,7 +85,11 @@ export default function ItemCard({ item }: ItemCardProps) {
               width={20}
             />
           </Button>
-          <Button className="flex gap-2 py-2 text-xs font-medium text-black border border-gray-200 rounded-full translate-y-8 opacity-0 transition-all items-center group-hover:translate-y-0 group-hover:opacity-100 [transition-property:transform,opacity] [transition-duration:300ms,150ms]">
+          <Button
+            className={`${
+              isVendorItem && "justify-center items-center"
+            } flex gap-2 py-2 text-xs font-medium text-black border border-gray-200 rounded-full translate-y-8 opacity-0 transition-all items-center group-hover:translate-y-0 group-hover:opacity-100 [transition-property:transform,opacity] [transition-duration:300ms,150ms]`}
+          >
             <Image
               src="/icons/gift.svg"
               alt="Add to Registry"

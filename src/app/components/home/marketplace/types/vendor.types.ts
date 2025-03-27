@@ -13,4 +13,4 @@ export interface VendorService {
   image: string;
 }
 
-export type VendorTab = "Services" | "Portfolio" | "Reviews";
+export type VendorTab = "Services" | "Products" | "Portfolio" | "Reviews";

@@ -8,6 +8,10 @@ import ServiceCard from "./single-vendor/service-card";
 import Image from "next/image";
 import { Vendor } from "./types";
 import Reviews from "./single-item/reviews";
+import Results from "./results";
+import ItemsResults from "./items-grid";
+import ItemCard from "./item-card";
+import { MOCK_ITEMS } from "@/app/mock/mock_vendors";
 
 interface SingleVendorPageProps {
   vendor: Vendor;
@@ -15,6 +19,9 @@ interface SingleVendorPageProps {
 
 export default function SingleVendorPage({ vendor }: SingleVendorPageProps) {
   const [activeTab, setActiveTab] = React.useState<VendorTab>("Services");
+
+  const [resultsActiveTab, setResultsActiveTab] =
+    React.useState<string>("Vendors");
 
   return (
     <div className="min-h-screen bg-[#ffffff] flex gap-0">
@@ -31,6 +38,14 @@ export default function SingleVendorPage({ vendor }: SingleVendorPageProps) {
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
               {vendor?.services?.map((service) => (
                 <ServiceCard key={service.id} service={service} />
+              ))}
+            </div>
+          )}
+
+          {activeTab === "Products" && (
+            <div className="w-full grid grid-cols-1 md:grid-cols-3 gap-6">
+              {MOCK_ITEMS.map((item) => (
+                <ItemCard key={item.id} item={item} isVendorItem />
               ))}
             </div>
           )}

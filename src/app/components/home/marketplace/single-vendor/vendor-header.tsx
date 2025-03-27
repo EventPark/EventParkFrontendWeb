@@ -72,7 +72,7 @@ export default function VendorHeader({ vendor }: VendorHeaderProps) {
             <div className="flex">
               <Button
                 onClick={() => setRequested(!requested)}
-                className={`flex items-center gap-2 ${
+                className={`flex items-center gap-2 transition-all duration-300 ${
                   requested
                     ? "text-amber-600 border border-amber-500 bg-white"
                     : "text-primary bg-primary-lightest"
