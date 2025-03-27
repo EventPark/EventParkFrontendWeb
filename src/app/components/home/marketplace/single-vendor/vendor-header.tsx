@@ -6,6 +6,7 @@ import Link from "next/link";
 import Button from "@/app/components/ui/button";
 import Calendar from "@/app/components/ui/calendar";
 import { Vendor } from "../types";
+import { useUserType } from "@/app/context/UserTypeContext";
 
 interface VendorHeaderProps {
   vendor: Vendor;
@@ -14,18 +15,19 @@ interface VendorHeaderProps {
 export default function VendorHeader({ vendor }: VendorHeaderProps) {
   const [showCalendar, setShowCalendar] = useState(false);
   const [selectedDate, setSelectedDate] = useState<Date | null>(null);
-
+  const [requested, setRequested] = useState<boolean>(false);
+  const { setUserType } = useUserType();
   const handleDateSelect = (date: Date) => {
     setSelectedDate(date);
     setShowCalendar(false);
-    // Here you can handle the selected date, e.g., open booking modal
   };
 
   return (
-    <div className="relative w-[25.25rem] h-[1024px] flex flex-col border-r border-gray-200 ">
+    <div className="relative w-auto h-[1024px] flex flex-col border-r border-gray-200 ">
       {/* Back Button */}
       <Link
-        href="/marketplace"
+        href="/home"
+        onClick={() => setUserType("marketplace")}
         className="absolute flex items-center gap-2 top-4 left-4 z-10 bg-white/80 backdrop-blur-sm p-2 pr-4 rounded-full text-base hover:bg-white transition-colors"
       >
         <Image
@@ -41,12 +43,6 @@ export default function VendorHeader({ vendor }: VendorHeaderProps) {
       <div className="relative h-[23rem]">
         {/* Cover Image */}
         <div className="relative h-[20rem] w-full bg-slate-700 ">
-          {/* <Image
-          src={vendor.imageUrl}∆
-          alt={`${vendor.name} cover`}
-          fill
-          className="object-cover"
-          /> */}
           <div className="absolute bottom-4 right-4 h-8 pl-2 pr-3 py-2.5 bg-white bg-opacity-20 rounded-[64px] inline-flex justify-center items-center gap-2">
             <Image
               src="/icons/star_rating.svg"
@@ -74,8 +70,23 @@ export default function VendorHeader({ vendor }: VendorHeaderProps) {
           <span className="text-base text-gray-500 ">{vendor.location}</span>
           <div className="pt-[26px]">
             <div className="flex">
-              <Button className="text-primary bg-primary-lightest">
-                Request Booking
+              <Button
+                onClick={() => setRequested(!requested)}
+                className={`flex items-center gap-2 ${
+                  requested
+                    ? "text-amber-600 border border-amber-500 bg-white"
+                    : "text-primary bg-primary-lightest"
+                } `}
+              >
+                {requested && (
+                  <div
+                    data-size="md"
+                    className="w-2.5 h-2.5 relative overflow-hidden"
+                  >
+                    <div className="w-2 h-2 left-[1px] top-[1px] absolute bg-[#FF9500] rounded-full" />
+                  </div>
+                )}
+                {requested ? "Request Sent" : "Request Booking"}
               </Button>
               <div className="flex flex-1 justify-end gap-2">
                 <Image

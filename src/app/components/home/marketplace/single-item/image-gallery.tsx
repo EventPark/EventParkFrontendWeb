@@ -22,7 +22,7 @@ export default function ImageGallery({
           className="object-cover"
         />
       </div>
-      <div className="flex gap-4 p-4">
+      <div className="flex gap-4 py-4">
         {images.map((img, index) => (
           <button
             key={index}

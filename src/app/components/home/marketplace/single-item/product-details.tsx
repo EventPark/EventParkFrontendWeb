@@ -12,8 +12,8 @@ export default function ProductDetails({ item }: ProductDetailsProps) {
   const [quantity, setQuantity] = React.useState(1);
 
   return (
-    <div className="border-l border-gray-200 pt-7">
-      <div className="pl-12">
+    <>
+      <div className="px-12">
         <div className="flex items-center gap-4 mb-4">
           <VendorLogoNameChip
             logoUrl={item.logoUrl}
@@ -35,7 +35,7 @@ export default function ProductDetails({ item }: ProductDetailsProps) {
           {item.name}
         </h1>
 
-        <p className="text-[#7d7d7d] mb-6 font-normal trackig-[-3%]">
+        <p className="text-grey-border mb-6 font-normal trackig-[-3%]">
           A premium black tuxedo suit tailored for weddings, corporate events,
           and special occasions.
         </p>
@@ -66,7 +66,7 @@ export default function ProductDetails({ item }: ProductDetailsProps) {
       </div>
 
       <div className="w-full h-px bg-gray-200"></div>
-      <div className="flex items-center gap-4 my-4 pl-12">
+      <div className="flex items-center gap-4 my-4 px-12">
         <Image src="/icons/circle-tag.svg" alt="check" width={36} height={36} />
         <div className="self-stretch justify-start text-Grays-Black text-2xl font-semibold font-['Rethink_Sans'] leading-loose">
           ₦{item.price.toLocaleString()}
@@ -74,7 +74,7 @@ export default function ProductDetails({ item }: ProductDetailsProps) {
       </div>
       <div className="w-full h-px bg-gray-200 mb-8"></div>
 
-      <div className="flex items-center gap-4 justify-between pl-12 mb-[30px]">
+      <div className="flex items-center gap-4 justify-between px-12 mb-[30px]">
         <div className="flex items-center border rounded-full p-1">
           <button
             onClick={() => setQuantity(Math.max(1, quantity - 1))}
@@ -99,7 +99,7 @@ export default function ProductDetails({ item }: ProductDetailsProps) {
       </div>
 
       <div className="w-full h-px bg-gray-200"></div>
-      <div className="py-6 px-6">
+      <div className="py-6 px-12">
         <Button className="bg-primary text-white py-3 rounded-full mb-4 w-[205px] flex gap-2">
           <Image
             src={"/icons/gift-white.svg"}
@@ -110,6 +110,6 @@ export default function ProductDetails({ item }: ProductDetailsProps) {
           Add to Registry
         </Button>
       </div>
-    </div>
+    </>
   );
 }

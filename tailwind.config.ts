@@ -22,6 +22,10 @@ const config: Config = {
           background: "#F2F2F7",
           border: "#808080",
         },
+        blue: {
+          DEFAULT:"#2E90FA",
+          dark: "#175CD3",
+        },
       },
       letterSpacing: {
         standard: "-1.26px",

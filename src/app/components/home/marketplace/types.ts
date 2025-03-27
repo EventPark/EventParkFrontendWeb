@@ -8,6 +8,7 @@ export interface Item {
   vendorImage: string;
   logoUrl: string;
   categories: string[];
+  reviews: Review[];
 }
 
 export type MarketplaceTab = "Items" | "Vendors";
@@ -37,6 +38,14 @@ export interface VendorService {
   image: string;
 }
 
+export interface Review {
+  id: string;
+  rating: number;
+  comment: string;
+  serviceId: string;
+  name?: string;
+}
+
 export type VendorTab = "Services" | "Portfolio" | "Reviews";
 
 export interface Vendor {
@@ -48,4 +57,5 @@ export interface Vendor {
   imageUrl: string;
   logoUrl: string;
   services?: VendorService[];
+  reviews?: Review[];
 }
